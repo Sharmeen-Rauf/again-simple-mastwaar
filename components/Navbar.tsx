@@ -26,12 +26,11 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
 
   const navLinks = [
     { id: "hero", en: "Home" },
-    { id: "about", en: "About" },
-    { id: "stats", en: "Stats" },
-    { id: "publications", en: "Shelf" },
-    { id: "tasbih", en: "Tasbih" },
-    { id: "map", en: "Map" },
+    { id: "about", en: "About Us" },
+    { id: "mission", en: "Our Mission" },
+    { id: "publications", en: "Books" },
     { id: "gallery", en: "Gallery" },
+    { id: "contact", en: "Contact Us" },
   ];
 
   return (

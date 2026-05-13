@@ -8,6 +8,7 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import QuoteMarquee from "../components/QuoteMarquee";
 import About from "../components/About";
+import Mission from "../components/Mission";
 import Stats from "../components/Stats";
 import Events from "../components/Events";
 import Publications from "../components/Publications";
@@ -63,6 +64,9 @@ export default function Home() {
 
             {/* Section 3: Asymmetric biography and inertia timeline */}
             <About  />
+
+            {/* Section 3.5: Comprehensive Core Charter Mission */}
+            <Mission />
 
             {/* Section 4: Twinkling Star Counter field */}
             <Stats  />

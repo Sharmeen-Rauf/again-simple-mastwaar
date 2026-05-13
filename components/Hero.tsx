@@ -331,12 +331,12 @@ export default function Hero() {
             position: "relative",
             zIndex: 3,
             textAlign: "center",
-            maxWidth: "900px",
+            maxWidth: "950px",
             padding: "0 20px",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: "16px",
+            gap: "18px",
           }}
         >
           {/* Unique Breathtaking Floating Arched Sanctuary Image */}
@@ -365,20 +365,20 @@ export default function Hero() {
             />
           </div>
 
-          {/* Line 1: Bismillah */}
+          {/* Welcome Tagline */}
           <h2
             ref={title1Ref}
-            className="arabic-text"
+            className="english-heading"
             style={{
-              color: "var(--gold-light)",
-              fontSize: "clamp(11px, 1.4vw, 15px)",
-              letterSpacing: "0.3em",
-              fontWeight: "normal",
-              textShadow: "0 0 10px rgba(240, 217, 160, 0.3)",
+              color: "var(--text-secondary)",
+              fontSize: "clamp(16px, 2vw, 24px)",
+              letterSpacing: "0.15em",
+              fontWeight: "bold",
+              textShadow: "0 0 10px rgba(2, 132, 199, 0.3)",
               marginBottom: "5px",
             }}
           >
-            IN THE NAME OF GOD, THE MOST GRACIOUS, THE MOST MERCIFUL
+            Welcome to Muhabbat Mission International - where LOVE is not just a word, but a way of life.
           </h2>
 
           {/* Line 2: Muhabbat Mission Main Title */}
@@ -387,9 +387,9 @@ export default function Hero() {
             className="english-heading"
             style={{
               color: "var(--gold-primary)",
-              fontSize: "clamp(28px, 4.5vw, 52px)",
+              fontSize: "clamp(32px, 5vw, 64px)",
               fontWeight: "bold",
-              lineHeight: "1.2",
+              lineHeight: "1.1",
               textShadow: "0 4px 15px rgba(255, 20, 147, 0.6)",
               margin: "5px 0",
               letterSpacing: "0.05em",
@@ -399,20 +399,84 @@ export default function Hero() {
             MUHABBAT MISSION INTERNATIONAL
           </h1>
 
-          {/* Line 3: English Subtitle */}
-          <div
-            ref={title3Ref}
-            className="english-heading"
+          {/* Introduction Paragraph */}
+          <p
+            className="english-body"
             style={{
-              color: "var(--gold-light)",
-              fontSize: "clamp(11px, 2vw, 18px)",
-              letterSpacing: "0.35em",
-              fontWeight: 500,
-              textTransform: "uppercase",
-              marginTop: "5px",
+              color: "var(--text-primary)",
+              fontSize: "clamp(15px, 1.5vw, 18px)",
+              lineHeight: "1.7",
+              maxWidth: "850px",
+              opacity: 0.95,
             }}
           >
-            MUHABBAT MISSION INTERNATIONAL
+            Founded in 1994 by Makhdoom Mahmood Mastwaar Qalandar, Muhabbat (Love) Mission International is dedicated to a vision free of sectarianism and politics. Our mission is rooted in love—love for Allah Almighty, love for His Messenger ﷺ, and love for each other. We pray that Allah blesses all human beings to love one another unconditionally.
+          </p>
+
+          <p
+            className="english-body"
+            style={{
+              color: "var(--text-muted)",
+              fontSize: "clamp(14px, 1.4vw, 16px)",
+              lineHeight: "1.7",
+              maxWidth: "850px",
+            }}
+          >
+            Makhdoom Mahmood Mastwaar Qalandar envisioned unity in diversity, aiming to achieve love, peace, and harmony among all people. Muhabbat Mission International strives to bring happiness, prosperity, and spiritual discovery through the mystical path toward oneness.
+          </p>
+
+          {/* Founder Quote Box */}
+          <div
+            style={{
+              backgroundColor: "var(--card-bg)",
+              border: "1px solid var(--gold-primary)",
+              borderRadius: "8px",
+              padding: "24px 36px",
+              marginTop: "10px",
+              boxShadow: "0 10px 25px rgba(255, 20, 147, 0.15)",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "12px",
+            }}
+          >
+            <span className="meta-text" style={{ fontSize: "11px", color: "var(--text-secondary)", fontWeight: "bold" }}>
+              MAKHDOOM MAHMOOD MASTWAAR QALANDAR SAYS:
+            </span>
+            <blockquote
+              className="english-heading"
+              style={{
+                fontSize: "clamp(18px, 2.2vw, 26px)",
+                color: "var(--gold-primary)",
+                fontStyle: "italic",
+                fontWeight: "bold",
+                lineHeight: "1.4",
+              }}
+            >
+              &ldquo;Uplifting goodness of society is only possible when the heart has Love, Muhabbat.&rdquo;
+            </blockquote>
+            
+            {/* Read More Button */}
+            <a
+              href="#mission"
+              className="meta-text"
+              style={{
+                marginTop: "10px",
+                display: "inline-block",
+                padding: "10px 24px",
+                backgroundColor: "var(--gold-primary)",
+                color: "#FFFFFF",
+                textDecoration: "none",
+                borderRadius: "25px",
+                fontSize: "12px",
+                fontWeight: "bold",
+                letterSpacing: "0.15em",
+                boxShadow: "0 5px 15px rgba(255, 20, 147, 0.4)",
+                transition: "all 0.3s ease",
+              }}
+            >
+              READ MORE ✦
+            </a>
           </div>
 
           {/* Line 4: Est & Founding details */}
@@ -420,10 +484,10 @@ export default function Hero() {
             ref={title4Ref}
             className="meta-text"
             style={{
-              color: "var(--text-secondary)",
-              fontSize: "clamp(9px, 1.4vw, 11px)",
+              color: "var(--text-muted)",
+              fontSize: "clamp(9px, 1.2vw, 11px)",
               letterSpacing: "0.22em",
-              marginTop: "10px",
+              marginTop: "15px",
               opacity: 0.8,
             }}
           >
