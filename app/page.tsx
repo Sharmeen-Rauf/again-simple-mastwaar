@@ -16,7 +16,6 @@ import Footer from "../components/Footer";
 
 export default function Home() {
   const [preloaderDone, setPreloaderDone] = useState(false);
-  const [language, setLanguage] = useState<"en" | "ur">("en");
   const [theme, setTheme] = useState<"dark" | "light">("dark");
 
   // Sync theme state with DOM element attribute for theme-specific CSS selectors
@@ -48,8 +47,8 @@ export default function Home() {
 
           {/* 4. Global Navigation menu */}
           <Navbar
-            language={language}
-            setLanguage={setLanguage}
+            
+            
             theme={theme}
             setTheme={setTheme}
           />
@@ -57,29 +56,29 @@ export default function Home() {
           {/* 5. Main Content Assembly */}
           <main>
             {/* Section 1: WebGL 12-pointed Star Morpher */}
-            <Hero language={language} />
+            <Hero  />
 
             {/* Section 2: Infinite momentum-reversing Quote Ticker */}
             <QuoteMarquee />
 
             {/* Section 3: Asymmetric biography and inertia timeline */}
-            <About language={language} />
+            <About  />
 
             {/* Section 4: Twinkling Star Counter field */}
-            <Stats language={language} />
+            <Stats  />
 
             {/* Section 5: Bento 3D Tilt Events calendar */}
-            <Events language={language} />
+            <Events  />
 
             {/* Section 6: 3D Perspective Publications Shelf */}
-            <Publications language={language} />
+            <Publications  />
 
             {/* Section 7: Interactive SVG World Map centers */}
-            <SufiMap language={language} />
+            <SufiMap  />
           </main>
 
           {/* Section 8: Inverted Parchment Manuscript Footer */}
-          <Footer language={language} />
+          <Footer  />
         </div>
       )}
     </>

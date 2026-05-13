@@ -5,65 +5,53 @@ import gsap from "gsap";
 
 interface CenterNode {
   id: string;
-  name: { en: string; ur: string };
-  city: { en: string; ur: string };
+  name: string;
+  city: string;
   x: number; // SVG X Coord
   y: number; // SVG Y Coord
-  desc: { en: string; ur: string };
+  desc: string;
   zoomBox: string; // ViewBox string for focus zoom
 }
 
-export default function SufiMap({ language }: { language: "en" | "ur" }) {
+export default function SufiMap() {
   const svgRef = useRef<SVGSVGElement>(null);
   const [selectedCenter, setSelectedCenter] = useState<string>("pakistan");
 
   const centers: CenterNode[] = [
     {
       id: "pakistan",
-      name: { en: "Darbar Sharif (Chakwal)", ur: "دربار شریف (چکوال)" },
-      city: { en: "Chakwal, Pakistan", ur: "چکوال، پاکستان" },
+      name: "Darbar Sharif (Chakwal)",
+      city: "Chakwal, Pakistan",
       x: 630,
       y: 260,
-      desc: {
-        en: "The global anchor of Muhabbat Mission International, founded in 1994. Hosts the central shrine, free community kitchens, and global spiritual assemblies.",
-        ur: "محبت مشن انٹرنیشنل کا عالمی مرکز، جس کا قیام ۱۹۹۴ میں عمل میں آیا۔ مرکزی دربار شریف، لنگر خانہ اور سالانہ روحانی اجتماعات کا میزبان۔",
-      },
+      desc: "The global anchor of Muhabbat Mission International, founded in 1994. Hosts the central shrine, free community kitchens, and global spiritual assemblies.",
       zoomBox: "500 160 260 180", // Zoomed-in crop
     },
     {
       id: "uk",
-      name: { en: "London Sufi Circle", ur: "لندن صوفی سرکل" },
-      city: { en: "London, United Kingdom", ur: "لندن، برطانیہ" },
+      name: "London Sufi Circle",
+      city: "London, United Kingdom",
       x: 460,
       y: 180,
-      desc: {
-        en: "Established in 2002 to serve seekers in Western Europe. Conducts weekly multilingual assemblies, silent meditations, and study groups.",
-        ur: "مغربی یورپ کے متلاشیانِ حق کے لیے ۲۰۰۲ میں قائم کیا گیا۔ ہفتہ وار کثیر لسانی محافلِ ذکر، مراقبہ اور علمی مباحثوں کا انعقاد۔",
-      },
+      desc: "Established in 2002 to serve seekers in Western Europe. Conducts weekly multilingual assemblies, silent meditations, and study groups.",
       zoomBox: "340 100 240 160",
     },
     {
       id: "norway",
-      name: { en: "Oslo Spiritual Node", ur: "اوسلو روحانی مرکز" },
-      city: { en: "Oslo, Norway", ur: "اوسلو، ناروے" },
+      name: "Oslo Spiritual Node",
+      city: "Oslo, Norway",
       x: 485,
       y: 140,
-      desc: {
-        en: "Bringing classical Sufi wisdom to Scandinavia. Oversees local welfare initiatives and distributes Scandinavian translations of Makhdoom's treatises.",
-        ur: "اسکینڈی نیویا میں روایتی تصوف کی حکمت کا علمبردار۔ مقامی فلاحی کاموں اور مکھدوم مستوار کی کتب کے تراجم کی تقسیم کا ذمہ دار۔",
-      },
+      desc: "Bringing classical Sufi wisdom to Scandinavia. Oversees local welfare initiatives and distributes Scandinavian translations of Makhdoom's treatises.",
       zoomBox: "360 80 240 160",
     },
     {
       id: "germany",
-      name: { en: "Frankfurt Research Center", ur: "فرینکفرٹ ریسرچ سنٹر" },
-      city: { en: "Frankfurt, Germany", ur: "فرینکفرٹ، جرمنی" },
+      name: "Frankfurt Research Center",
+      city: "Frankfurt, Germany",
       x: 480,
       y: 190,
-      desc: {
-        en: "An active research repository compiling translations of Silsila-e-Dilbar and coordinating welfare initiatives across mainland Europe.",
-        ur: "سلسلہ دلبر کے تراجم اور یورپی ممالک میں فلاحی کاموں کی نگرانی کرنے والا ایک متحرک علمی و تحقیقی مرکز۔",
-      },
+      desc: "An active research repository compiling translations of Silsila-e-Dilbar and coordinating welfare initiatives across mainland Europe.",
       zoomBox: "360 100 240 160",
     },
   ];
@@ -134,7 +122,7 @@ export default function SufiMap({ language }: { language: "en" | "ur" }) {
       {/* Section Header */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: "1px solid rgba(200, 169, 110, 0.2)", paddingBottom: "20px", marginBottom: "50px", position: "relative", zIndex: 10 }}>
         <h4 className="english-heading" style={{ fontSize: "var(--t4)", color: "var(--text-primary)" }}>
-          {language === "en" ? "Illuminated Global Presence" : "عالمی روحانی مراکز"}
+          {"Illuminated Global Presence"}
         </h4>
         <span className="meta-text" style={{ fontSize: "10px", color: "var(--text-muted)" }}>
           Interactive Map Navigation ✦
@@ -195,7 +183,7 @@ export default function SufiMap({ language }: { language: "en" | "ur" }) {
                   }}
                 >
                   <h5
-                    className={language === "en" ? "english-heading" : "urdu-text"}
+                    className={"english-heading"}
                     style={{
                       fontSize: "16px",
                       color: isActive ? "var(--gold-light)" : "var(--text-primary)",
@@ -203,7 +191,7 @@ export default function SufiMap({ language }: { language: "en" | "ur" }) {
                       marginBottom: "6px",
                     }}
                   >
-                    {language === "en" ? center.name.en : center.name.ur}
+                    {center.name}
                   </h5>
                   <span
                     className="meta-text"
@@ -213,23 +201,18 @@ export default function SufiMap({ language }: { language: "en" | "ur" }) {
                       letterSpacing: "0.1em",
                     }}
                   >
-                    {language === "en" ? center.city.en : center.city.ur}
+                    {center.city}
                   </span>
 
                   {/* Expand description if active */}
                   {isActive && (
                     <p
-                      className={language === "en" ? "english-body" : "urdu-text"}
+                      className={"english-body"}
                       style={{
                         color: "var(--text-muted)",
-                        fontSize: language === "en" ? "13px" : "14px",
-                        lineHeight: "1.5",
-                        marginTop: "12px",
-                        paddingTop: "12px",
-                        borderTop: "1px solid rgba(200, 169, 110, 0.15)",
-                      }}
+                        fontSize: "13px"}}
                     >
-                      {language === "en" ? center.desc.en : center.desc.ur}
+                      {center.desc}
                     </p>
                   )}
                 </div>

@@ -5,7 +5,7 @@ import * as THREE from "three";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export default function Hero({ language }: { language: "en" | "ur" }) {
+export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const title1Ref = useRef<HTMLHeadingElement>(null);
@@ -14,20 +14,9 @@ export default function Hero({ language }: { language: "en" | "ur" }) {
   const title4Ref = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
 
-  const [ctaText, setCtaText] = useState(language === "ur" ? "داخلِ دربار ہوں ↓" : "Enter the Darbar ↓");
+  const [ctaText, setCtaText] = useState("Enter the Darbar ↓");
 
-  // Cycle CTA Text
-  useEffect(() => {
-    const urText = "داخلِ دربار ہوں ↓";
-    const enText = "Enter the Darbar ↓";
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setCtaText(language === "ur" ? urText : enText);
-
-    const interval = setInterval(() => {
-      setCtaText((prev) => (prev === enText ? urText : enText));
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [language]);
+  // Removed language dependency
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -363,13 +352,13 @@ export default function Hero({ language }: { language: "en" | "ur" }) {
               marginBottom: "5px",
             }}
           >
-            بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+            IN THE NAME OF GOD, THE MOST GRACIOUS, THE MOST MERCIFUL
           </h2>
 
           {/* Line 2: Muhabbat Mission Urdu Title */}
           <h1
             ref={title2Ref}
-            className="urdu-text"
+            className="english-heading"
             style={{
               color: "var(--gold-primary)",
               fontSize: "clamp(48px, 8vw, 108px)",
@@ -381,7 +370,7 @@ export default function Hero({ language }: { language: "en" | "ur" }) {
             }}
             data-cursor="eye"
           >
-            محبت مشن انٹرنیشنل
+            MUHABBAT MISSION INTERNATIONAL
           </h1>
 
           {/* Line 3: English Title */}
@@ -455,12 +444,12 @@ export default function Hero({ language }: { language: "en" | "ur" }) {
 
           {/* Crossfading Scroll Phrase */}
           <span
-            className={ctaText.includes("داخلِ") ? "urdu-text" : "english-heading"}
+            className="english-heading"
             style={{
-              fontFamily: ctaText.includes("داخلِ") ? "var(--font-noto-urdu)" : "var(--font-cormorant)",
+              fontFamily: "var(--font-cormorant)",
               color: "var(--gold-light)",
-              fontSize: ctaText.includes("داخلِ") ? "16px" : "13px",
-              letterSpacing: ctaText.includes("داخلِ") ? "0" : "0.2em",
+              fontSize: "13px",
+              letterSpacing: "0.2em",
               textTransform: "uppercase",
               opacity: 0.8,
               transition: "all 0.5s ease",

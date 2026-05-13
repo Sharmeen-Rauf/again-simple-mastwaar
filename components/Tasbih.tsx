@@ -14,7 +14,7 @@ interface CalligraphyParticle {
   text: string;
 }
 
-export default function Tasbih({ language }: { language: "en" | "ur" }) {
+export default function Tasbih() {
   const [count, setCount] = useState<number>(0);
   const [milestone, setMilestone] = useState<"none" | "subhanallah" | "alhamdulillah" | "allahuakbar">("none");
   const [spinActive, setSpinActive] = useState(false);
@@ -114,7 +114,7 @@ export default function Tasbih({ language }: { language: "en" | "ur" }) {
         vy: -speed - 1, // Drifts upward
         opacity: 0.9,
         size: Math.floor(Math.random() * 12) + 20, // Font sizes
-        text: "اللہ",
+        text: "ALLAH",
       });
     }
 
@@ -235,7 +235,7 @@ export default function Tasbih({ language }: { language: "en" | "ur" }) {
             textShadow: "0 0 10px rgba(200, 169, 110, 0.3)",
           }}
         >
-          ذِكْرُ اللَّه
+          REMEMBRANCE OF ALLAH
         </h3>
         <p
           className="english-heading"
@@ -247,7 +247,7 @@ export default function Tasbih({ language }: { language: "en" | "ur" }) {
             marginTop: "8px",
           }}
         >
-          {language === "en" ? "Remember Allah" : "ذکرِ الٰہی سے دل کو منور کریں"}
+          {"Remember Allah"}
         </p>
       </div>
 
@@ -484,9 +484,9 @@ export default function Tasbih({ language }: { language: "en" | "ur" }) {
                 padding: "0 20px",
               }}
             >
-              {milestone === "subhanallah" && "سُبْحَانَ اللَّهِ"}
-              {milestone === "alhamdulillah" && "الْحَمْدُ لِلَّهِ"}
-              {milestone === "allahuakbar" && "اللَّهُ أَكْبَرُ"}
+              {milestone === "subhanallah" && "SUBHANALLAH"}
+              {milestone === "alhamdulillah" && "ALHAMDULILLAH"}
+              {milestone === "allahuakbar" && "ALLAHU AKBAR"}
             </motion.h2>
 
             <motion.p

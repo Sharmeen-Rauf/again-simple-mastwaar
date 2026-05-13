@@ -7,13 +7,13 @@ interface BookData {
   id: number;
   title: string;
   spineTitle: string;
-  sub: { en: string; ur: string };
+  sub: string;
   quote: string;
   translation: string;
-  desc: { en: string; ur: string };
+  desc: string;
 }
 
-export default function Publications({ language }: { language: "en" | "ur" }) {
+export default function Publications() {
   const [activeBook, setActiveBook] = useState<number>(2); // Default to center book
   const [openedBook, setOpenedBook] = useState<number | null>(null);
 
@@ -22,61 +22,46 @@ export default function Publications({ language }: { language: "en" | "ur" }) {
       id: 0,
       title: "Tafseer-e-Mastwaar",
       spineTitle: "TAFSEER-E-MASTWAAR",
-      sub: { en: "Exegesis of Love", ur: "تفسیر مستوار" },
+      sub: "Exegesis of Love",
       quote: "الْقُرْآنُ هُوَ بَحْرُ الْمَحَبَّةِ",
       translation: "The Quran is the limitless ocean of divine love.",
-      desc: {
-        en: "A comprehensive spiritual commentary on the Holy Quran, unraveling the dimensions of love, unity, and Sufi coordinates woven into the sacred verses.",
-        ur: "قرآن پاک کی ایک جامع روحانی تفسیر، جس میں الٰہی آیات میں پوشیدہ محبت، اتحاد اور تصوف کے لطیف اشارات کو واضح کیا گیا ہے۔",
-      },
+      desc: "A comprehensive spiritual commentary on the Holy Quran, unraveling the dimensions of love, unity, and Sufi coordinates woven into the sacred verses.",
     },
     {
       id: 1,
       title: "Maqam-e-Mahmood",
       spineTitle: "MAQAM-E-MAHMOOD",
-      sub: { en: "The Station of Praise", ur: "مقامِ محمود" },
+      sub: "The Station of Praise",
       quote: "الْمَقَامُ الْأَعْلَى هُوَ الْفَنَاءُ",
       translation: "The highest spiritual station is absolute self-annihilation.",
-      desc: {
-        en: "An illuminating discourse on the ultimate stations of the spiritual journey and the sublime presence of the Beloved.",
-        ur: "سفرِ سلوک کی آخری منزلوں اور محبوب حقیقی کے حضور سجدہ ہائے نیاز کے اسرار پر روشنی ڈالنے والی ایک ایمان افروز تصنیف۔",
-      },
+      desc: "An illuminating discourse on the ultimate stations of the spiritual journey and the sublime presence of the Beloved.",
     },
     {
       id: 2,
       title: "Makeen-e-Dil",
       spineTitle: "MAKEEN-E-DIL",
-      sub: { en: "The Dweller of the Heart", ur: "مکیںِ دل" },
+      sub: "The Dweller of the Heart",
       quote: "قَلْبُ الْمُؤْمِنِ عَرْشُ اللَّهِ",
       translation: "The heart of the lover is the throne of the Divine.",
-      desc: {
-        en: "Exploring the heart as the true compass of the soul, where the Divine resides in silent splendor, transcending all physical structures.",
-        ur: "دل کو روح کا حقیقی قطب نما قرار دے کر اس حقیقت کی وضاحت کہ خدا کسی مکان میں نہیں بلکہ محبت بھرے دل میں بستا ہے۔",
-      },
+      desc: "Exploring the heart as the true compass of the soul, where the Divine resides in silent splendor, transcending all physical structures.",
     },
     {
       id: 3,
       title: "Silsila-e-Dilbar",
       spineTitle: "SILSILA-E-DILBAR",
-      sub: { en: "The Lineage of Beauty", ur: "سلسلہ دلبر" },
+      sub: "The Lineage of Beauty",
       quote: "سِلْسِلَةُ الْقُلُوبِ مُتَّصِلَةٌ بِالْحُبِّ",
       translation: "The chain of hearts is joined by golden links of love.",
-      desc: {
-        en: "Tracing the spiritual lineage of the path of beauty, demonstrating how light has passed from heart to heart through history.",
-        ur: "سلسلہ محبت کے روحانی شجرہ نسب کا تذکرہ، جس میں بتایا گیا ہے کہ کس طرح صدیوں سے یہ نورِ الٰہی سینہ بہ سینہ منتقل ہوتا آیا ہے۔",
-      },
+      desc: "Tracing the spiritual lineage of the path of beauty, demonstrating how light has passed from heart to heart through history.",
     },
     {
       id: 4,
       title: "Asrar-e-Mastwaar",
       spineTitle: "ASRAR-E-MASTWAAR",
-      sub: { en: "Secrets of the Ecstatic", ur: "اسرارِ مستوار" },
+      sub: "Secrets of the Ecstatic",
       quote: "الأَسْرَارُ تَظْهَرُ لأَهْلِ الصِّدْقِ",
       translation: "Sacred secrets reveal themselves only to the sincere.",
-      desc: {
-        en: "A compilation of ecstatic revelations, aphorisms, and profound mystical keys detailing the coordinates of the heart's alignment.",
-        ur: "وجدانی کیفیات، اقوالِ زریں اور عمیق روحانی نکات کا مجموعہ جو مرید کے دل کو معرفتِ الٰہی سے منور کرتے ہیں۔",
-      },
+      desc: "A compilation of ecstatic revelations, aphorisms, and profound mystical keys detailing the coordinates of the heart's alignment.",
     },
   ];
 
@@ -116,13 +101,13 @@ export default function Publications({ language }: { language: "en" | "ur" }) {
           lineHeight: "1",
         }}
       >
-        کتب تصنیف
+        Publications
       </div>
 
       {/* Section Header */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: "1px solid rgba(200, 169, 110, 0.2)", paddingBottom: "20px", marginBottom: "80px", position: "relative", zIndex: 10 }}>
         <h4 className="english-heading" style={{ fontSize: "var(--t4)", color: "var(--text-primary)" }}>
-          {language === "en" ? "The Sacred Bookshelf" : "کتبِ مکھدوم مستوار قلندرؒ"}
+          {"The Sacred Bookshelf"}
         </h4>
         <span className="meta-text" style={{ fontSize: "10px", color: "var(--text-muted)" }}>
           3D Perspective Scene ✦
@@ -253,7 +238,7 @@ export default function Publications({ language }: { language: "en" | "ur" }) {
                             lineHeight: "1.2",
                           }}
                         >
-                          {book.sub.ur}
+                          {book.sub}
                         </span>
                       </div>
 
@@ -322,7 +307,7 @@ export default function Publications({ language }: { language: "en" | "ur" }) {
                   >
                     {/* Calligraphy sample inside pages */}
                     <div className="arabic-text" style={{ fontSize: "14px", color: "var(--deep-maroon)", opacity: 0.2, transform: "rotate(-10deg)" }}>
-                      محبت قلندر
+                      Love of Qalandar
                     </div>
                   </div>
 
@@ -451,25 +436,23 @@ export default function Publications({ language }: { language: "en" | "ur" }) {
 
               {/* Subtitles (Bilingual) */}
               <div style={{ display: "flex", gap: "14px", alignItems: "baseline", borderTop: "1px solid rgba(200,169,110,0.2)", paddingTop: "14px", width: "100%", justifyContent: "center" }}>
-                <span className="urdu-text" style={{ fontSize: "18px", color: "var(--gold-light)", fontWeight: "bold" }}>
-                  {books[openedBook].sub.ur}
+                <span className="english-heading" style={{ fontSize: "18px", color: "var(--gold-light)", fontWeight: "bold" }}>
+                  {books[openedBook].sub}
                 </span>
                 <span style={{ color: "var(--gold-dim)" }}>✦</span>
                 <span className="english-heading" style={{ fontSize: "14px", color: "var(--text-primary)", textTransform: "uppercase" }}>
-                  {books[openedBook].sub.en}
+                  {books[openedBook].sub}
                 </span>
               </div>
 
               {/* Description body */}
               <p
-                className={language === "en" ? "english-body" : "urdu-text"}
+                className={"english-body"}
                 style={{
                   color: "var(--text-muted)",
-                  fontSize: language === "en" ? "14px" : "15px",
-                  lineHeight: "1.7",
-                }}
+                  fontSize: "14px"}}
               >
-                {language === "en" ? books[openedBook].desc.en : books[openedBook].desc.ur}
+                {books[openedBook].desc}
               </p>
             </motion.div>
           )}

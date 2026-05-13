@@ -12,7 +12,7 @@ interface VideoCard {
   bgGradient: string;
 }
 
-export default function Gallery({ language }: { language: "en" | "ur" }) {
+export default function Gallery() {
   const [activeVideo, setActiveVideo] = useState<VideoCard | null>(null);
 
   const videos: VideoCard[] = [
@@ -72,7 +72,7 @@ export default function Gallery({ language }: { language: "en" | "ur" }) {
       {/* Section Header */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: "1px solid rgba(200, 169, 110, 0.2)", paddingBottom: "20px", marginBottom: "60px", position: "relative", zIndex: 5 }}>
         <h4 className="english-heading" style={{ fontSize: "var(--t4)", color: "var(--text-primary)" }}>
-          {language === "en" ? "Cinematic Library" : "بصری لائبریری"}
+          {"Cinematic Library"}
         </h4>
         <span className="meta-text" style={{ fontSize: "10px", color: "var(--text-muted)" }}>
           Broadcast Archives ✦
@@ -224,7 +224,7 @@ export default function Gallery({ language }: { language: "en" | "ur" }) {
       <div style={{ marginTop: "80px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "40px" }}>
           <h4 className="english-heading" style={{ fontSize: "20px", color: "var(--gold-primary)" }}>
-            {language === "en" ? "Sacred Geometry & Manuscripts" : "آثار و مقدس نقوش"}
+            {"Sacred Geometry & Manuscripts"}
           </h4>
           <span className="meta-text" style={{ fontSize: "10px", color: "var(--text-muted)" }}>
             Hover to Illuminate ✦
@@ -263,7 +263,7 @@ export default function Gallery({ language }: { language: "en" | "ur" }) {
                 strokeWidth="0.5"
                 strokeDasharray="4,4"
               />
-              <text x="150" y="240" textAnchor="middle" className="arabic-text" fontSize="32">محراب</text>
+              <text x="150" y="240" textAnchor="middle" className="arabic-text" fontSize="32">Arch</text>
             </svg>
             <span className="meta-text">Mughal Sanctuary Arch</span>
           </div>
@@ -290,14 +290,14 @@ export default function Gallery({ language }: { language: "en" | "ur" }) {
             <svg viewBox="0 0 300 400" className="masonry-svg">
               <rect width="300" height="400" fill="none" />
               <rect x="15" y="15" width="270" height="370" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="3,3" />
-              {/* Hand-drawn stylized calligraphy for 'Ishq' (عشق) */}
+              {/* Hand-drawn stylized calligraphy for 'Ishq' (Ishq) */}
               <g transform="translate(150, 200)">
                 {/* Outer decorative halo */}
                 <circle cx="0" cy="0" r="100" fill="none" stroke="currentColor" strokeWidth="1" className="outline-stroke" />
                 <circle cx="0" cy="0" r="92" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="2,2" />
                 {/* Calligraphy word in center */}
                 <text x="0" y="15" textAnchor="middle" className="arabic-text core-glow" fontSize="64" fill="currentColor">
-                  عشق
+                  Ishq
                 </text>
                 <text x="0" y="50" textAnchor="middle" className="english-heading" fontSize="10" letterSpacing="0.2em" fill="currentColor">
                   SACRED ECSTASY

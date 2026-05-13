@@ -11,19 +11,19 @@ export default function QuoteMarquee() {
 
   const quotes = [
     {
-      ar: "محبت کے بغیر دل کا کوئی وجود نہیں",
+      ar: "A heart without love has no existence",
       en: "Without love, the heart has no existence",
     },
     {
-      ar: "دل کا جھکاؤ ہی حقیقت کی طرف پہلا قدم ہے",
+      ar: "The inclination of the heart is the first step towards truth",
       en: "The turning of the heart is the first step toward Truth",
     },
     {
-      ar: "عشق ہی کائنات کا واحد راز ہے",
+      ar: "Love is the only secret of the universe",
       en: "Love is the sole secret of the universe",
     },
     {
-      ar: "روح کا سفر صرف سچائی کی تلاش ہے",
+      ar: "The journey of the soul is only the search for truth",
       en: "The journey of the soul is purely the search for Truth",
     },
   ];
@@ -121,7 +121,7 @@ export default function QuoteMarquee() {
 
       {/* 4. Urdu Attribution */}
       <span
-        className="urdu-text"
+        className="english-heading"
         style={{
           fontSize: "var(--marquee-attribution, 14px)",
           color: "var(--text-secondary)",
@@ -129,7 +129,7 @@ export default function QuoteMarquee() {
           opacity: 0.8,
         }}
       >
-        — مکھدوم مستوار قلندر
+        — Makhdoom Mastwaar Qalandar
       </span>
 
       {/* 5. Gold Divider */}

@@ -5,7 +5,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export default function About({ language }: { language: "en" | "ur" }) {
+export default function About() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const portraitRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
@@ -80,43 +80,28 @@ export default function About({ language }: { language: "en" | "ur" }) {
   const milestones = [
     {
       year: "1994",
-      title: { en: "The Founding", ur: "بنیاد" },
-      desc: {
-        en: "Muhabbat Mission International is established in Chakwal, Pakistan, laying the foundation of divine love.",
-        ur: "محبت مشن انٹرنیشنل کا قیام چکوال، پاکستان میں ہوا، جس نے الٰہی محبت کی بنیاد رکھی۔",
-      },
+      title: "The Founding",
+      desc: "Muhabbat Mission International is established in Chakwal, Pakistan, laying the foundation of divine love.",
     },
     {
       year: "2002",
-      title: { en: "Global Expansion", ur: "بین الاقوامی وسعت" },
-      desc: {
-        en: "Spiritual and educational nodes expand to Europe, including hubs in the United Kingdom, Norway, and Germany.",
-        ur: "روحانی اور تعلیمی مراکز کا دائرہ کار یورپ، بشمول برطانیہ، ناروے اور جرمنی تک بڑھایا گیا۔",
-      },
+      title: "Global Expansion",
+      desc: "Spiritual and educational nodes expand to Europe, including hubs in the United Kingdom, Norway, and Germany.",
     },
     {
       year: "2011",
-      title: { en: "Divine Liturgies", ur: "تصانیف و تحریر" },
-      desc: {
-        en: "Silsila-e-Dilbar and Tafseer-e-Mastwaar are published, providing structured guidance on Sufi path coordinates.",
-        ur: "سلسلہ دلبر اور تفسیر مستوار کی اشاعت ہوئی، جس نے تصوف کی راہ پر چلنے والوں کی رہنمائی کی۔",
-      },
+      title: "Divine Liturgies",
+      desc: "Silsila-e-Dilbar and Tafseer-e-Mastwaar are published, providing structured guidance on Sufi path coordinates.",
     },
     {
       year: "2018",
-      title: { en: "Welfare Institutions", ur: "فلاحی ادارے" },
-      desc: {
-        en: "Over 35 educational institutes and centers are dedicated to offering free physical and spiritual shelter.",
-        ur: "۳۵ سے زائد تعلیمی ادارے اور مراکز مفت جسمانی اور روحانی پناہ گاہ فراہم کرنے کے لیے وقف کیے گئے۔",
-      },
+      title: "Welfare Institutions",
+      desc: "Over 35 educational institutes and centers are dedicated to offering free physical and spiritual shelter.",
     },
     {
       year: "2025",
-      title: { en: "Darbar Sharif Gathering", ur: "عظیم الشان اجتماعات" },
-      desc: {
-        en: "Modern digital portals connect over 100K devotees worldwide with live digital spiritual circles and streams.",
-        ur: "جدید ڈیجیٹل پورٹلز نے دنیا بھر میں ایک لاکھ سے زائد عقیدت مندوں کو لائیو روحانی حلقوں سے جوڑا۔",
-      },
+      title: "Darbar Sharif Gathering",
+      desc: "Modern digital portals connect over 100K devotees worldwide with live digital spiritual circles and streams.",
     },
   ];
 
@@ -147,7 +132,7 @@ export default function About({ language }: { language: "en" | "ur" }) {
           lineHeight: "1",
         }}
       >
-        محبت مکھدوم
+        Love Makhdoom
       </div>
 
       {/* Grid: Asymmetric 60/40 Split */}
@@ -226,7 +211,7 @@ export default function About({ language }: { language: "en" | "ur" }) {
               lineHeight: 1.1,
             }}
           >
-            محمود مستوار قلندر
+            Mahmood Mastwaar Qalandar
           </div>
         </div>
 
@@ -267,7 +252,7 @@ export default function About({ language }: { language: "en" | "ur" }) {
 
           {/* Urdu Subheading (RTL Right Aligned) */}
           <h3
-            className="urdu-text"
+            className="english-heading"
             style={{
               color: "var(--gold-light)",
               fontSize: "var(--t4)",
@@ -276,7 +261,7 @@ export default function About({ language }: { language: "en" | "ur" }) {
               margin: "10px 0",
             }}
           >
-            مکھدوم محمود مستوار قلندرؒ
+            Makhdoom Mahmood Mastwaar Qalandarؒ
           </h3>
 
           {/* Bio Description (Each paragraph treated as a stagger line) */}
@@ -292,14 +277,10 @@ export default function About({ language }: { language: "en" | "ur" }) {
             }}
           >
             <p className="bio-line">
-              {language === "en"
-                ? "Makhdoom Mahmood Mastwaar Qalandar founded Muhabbat Mission International in 1994, aiming to spread the universal message of unconditional divine love and spiritual wisdom."
-                : "مکھدوم محمود مستوار قلندر نے ۱۹۹۴ میں محبت مشن انٹرنیشنل کی بنیاد رکھی، جس کا مقصد غیر مشروط الٰہی محبت اور روحانی حکمت کے آفاقی پیغام کو پھیلانا تھا۔"}
+              {"Makhdoom Mahmood Mastwaar Qalandar founded Muhabbat Mission International in 1994, aiming to spread the universal message of unconditional divine love and spiritual wisdom."}
             </p>
             <p className="bio-line">
-              {language === "en"
-                ? "Rooted in the ancient heritage of Chakwal, Pakistan, the mission operates across multiple continents, offering sanctuary to seekers of Truth and love."
-                : "پاکستان کے قدیم تاریخی قصبے چکوال کی جڑوں سے شروع ہونے والا یہ مشن اب متعدد براعظموں میں کام کر رہا ہے، جو سچائی اور محبت کے متلاشیوں کو پناہ گاہیں فراہم کرتا ہے۔"}
+              {"Rooted in the ancient heritage of Chakwal, Pakistan, the mission operates across multiple continents, offering sanctuary to seekers of Truth and love."}
             </p>
           </div>
 
@@ -341,7 +322,7 @@ export default function About({ language }: { language: "en" | "ur" }) {
                 className="arabic-text"
                 style={{ fontFamily: "var(--font-amiri), serif", fontWeight: "bold" }}
               >
-                محبت
+                Muhabbat
               </text>
             </svg>
             <div style={{ display: "flex", flexDirection: "column" }}>
@@ -452,26 +433,24 @@ export default function About({ language }: { language: "en" | "ur" }) {
 
                 {/* Event Title */}
                 <h5
-                  className={language === "en" ? "english-heading" : "urdu-text"}
+                  className={"english-heading"}
                   style={{
                     color: "var(--gold-light)",
                     fontSize: "18px",
                     lineHeight: "1.3",
                   }}
                 >
-                  {language === "en" ? card.title.en : card.title.ur}
+                  {card.title}
                 </h5>
 
                 {/* Card description */}
                 <p
-                  className={language === "en" ? "english-body" : "urdu-text"}
+                  className={"english-body"}
                   style={{
                     color: "var(--text-muted)",
-                    fontSize: language === "en" ? "13px" : "14px",
-                    lineHeight: "1.6",
-                  }}
+                    fontSize: "13px"}}
                 >
-                  {language === "en" ? card.desc.en : card.desc.ur}
+                  {card.desc}
                 </p>
               </div>
             ))}

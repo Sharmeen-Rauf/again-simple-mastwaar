@@ -48,7 +48,7 @@ function TiltCard({ children, style, className }: { children: React.ReactNode; s
   );
 }
 
-export default function Events({ language }: { language: "en" | "ur" }) {
+export default function Events() {
   return (
     <section
       id="gallery"
@@ -79,7 +79,7 @@ export default function Events({ language }: { language: "en" | "ur" }) {
       {/* Header */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: "1px solid rgba(200, 169, 110, 0.2)", paddingBottom: "20px", marginBottom: "50px", position: "relative", zIndex: 2 }}>
         <h4 className="english-heading" style={{ fontSize: "var(--t4)", color: "var(--text-primary)" }}>
-          {language === "en" ? "Sacred Gatherings" : "محافل اور روحانی اجتماعات"}
+          {"Sacred Gatherings"}
         </h4>
         <span className="meta-text" style={{ fontSize: "10px", color: "var(--text-muted)" }}>
           Featured Events ✦
@@ -195,7 +195,7 @@ export default function Events({ language }: { language: "en" | "ur" }) {
               <span>Oct 30, 2025</span>
               <span style={{ color: "var(--gold-dim)" }}>•</span>
               <span className="arabic-text" style={{ fontSize: "12px", transform: "translateY(-1px)" }}>
-                ۳۰ اکتوبر
+                October 30
               </span>
             </div>
 
@@ -209,9 +209,7 @@ export default function Events({ language }: { language: "en" | "ur" }) {
                 lineHeight: "1.1",
               }}
             >
-              {language === "en"
-                ? "Annual Milad-un-Nabi Darbar"
-                : "سالانہ میلاد النبیؐ دربار شریف"}
+              {"Annual Milad-un-Nabi Darbar"}
             </h3>
 
             {/* Description */}
@@ -224,9 +222,7 @@ export default function Events({ language }: { language: "en" | "ur" }) {
                 maxWidth: "600px",
               }}
             >
-              {language === "en"
-                ? "Join our central congregation celebrating divine mercy. A transcendent assembly of classical Qawwali recitation, illuminated spiritual paths, and direct discourses."
-                : "رحمتِ الٰہی کے جشن میں شرکت کریں۔ روایتی قوالی اور مکھدوم محمود کے روحانی ارشادات پر مشتمل ایک عظیم الشان اجتماع۔"}
+              {"Join our central congregation celebrating divine mercy. A transcendent assembly of classical Qawwali recitation, illuminated spiritual paths, and direct discourses."}
             </p>
 
             {/* Tracing Perimeter CTA Button */}
@@ -276,7 +272,7 @@ export default function Events({ language }: { language: "en" | "ur" }) {
                   textTransform: "uppercase",
                 }}
               >
-                {language === "en" ? "Enter Darbar ✦" : "دربار میں داخل ہوں"}
+                {"Enter Darbar ✦"}
               </div>
             </div>
           </div>
@@ -320,12 +316,10 @@ export default function Events({ language }: { language: "en" | "ur" }) {
             {/* Bottom Content */}
             <div style={{ display: "flex", flexDirection: "column", gap: "8px", transform: "translateZ(15px)" }}>
               <h4 className="english-heading" style={{ color: "var(--gold-light)", fontSize: "18px" }}>
-                {language === "en" ? "Oslo Sufi Assembly" : "اوسلو صوفی اجتماع"}
+                {"Oslo Sufi Assembly"}
               </h4>
               <p className="english-body" style={{ color: "var(--text-muted)", fontSize: "12px", lineHeight: "1.5" }}>
-                {language === "en"
-                  ? "Norway gathering bringing sacred light and chanting meditation to northern Europe seekers."
-                  : "ناروے کا اجتماع جس کا مقصد شمالی یورپ کے متلاشیوں تک کلمہ حق پہنچانا ہے۔"}
+                {"Norway gathering bringing sacred light and chanting meditation to northern Europe seekers."}
               </p>
             </div>
           </TiltCard>
@@ -365,12 +359,10 @@ export default function Events({ language }: { language: "en" | "ur" }) {
             {/* Bottom Content */}
             <div style={{ display: "flex", flexDirection: "column", gap: "8px", transform: "translateZ(15px)" }}>
               <h4 className="english-heading" style={{ color: "var(--gold-light)", fontSize: "18px" }}>
-                {language === "en" ? "London Spiritual Circle" : "لندن حلقہ ذکر"}
+                {"London Spiritual Circle"}
               </h4>
               <p className="english-body" style={{ color: "var(--text-muted)", fontSize: "12px", lineHeight: "1.5" }}>
-                {language === "en"
-                  ? "An evening of meditation, classical qawwali, and universal wisdom in central London."
-                  : "وسطی لندن میں مراقبہ، روایتی قوالی اور عالمگیر حکمت کی ایک شام۔"}
+                {"An evening of meditation, classical qawwali, and universal wisdom in central London."}
               </p>
             </div>
           </TiltCard>

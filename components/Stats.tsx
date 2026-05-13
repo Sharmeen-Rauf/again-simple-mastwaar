@@ -133,7 +133,7 @@ function StatCounter({ target, suffix, label }: { target: number; suffix: string
   );
 }
 
-export default function Stats({ language }: { language: "en" | "ur" }) {
+export default function Stats() {
   const [stars, setStars] = useState<{ id: number; x: number; y: number; delay: string; duration: string; size: number }[]>([]);
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -171,10 +171,10 @@ export default function Stats({ language }: { language: "en" | "ur" }) {
   }, []);
 
   const statsList = [
-    { target: 70, suffix: "+", label: { en: "YEARS OF DEDICATION", ur: "۷۰ سالہ کلمہ حق" } },
-    { target: 37, suffix: "", label: { en: "INSTITUTIONS", ur: "۳۷ تعلیمی مراکز" } },
-    { target: 25, suffix: "+", label: { en: "SUFI CENTERS", ur: "۲۵+ تصوف خانے" } },
-    { target: 100, suffix: "K+", label: { en: "DEVOTEES WORLDWIDE", ur: "۱ لاکھ+ مریدین" } },
+    { target: 70, suffix: "+", label: "YEARS OF DEDICATION" },
+    { target: 37, suffix: "", label: "INSTITUTIONS" },
+    { target: 25, suffix: "+", label: "SUFI CENTERS" },
+    { target: 100, suffix: "K+", label: "DEVOTEES WORLDWIDE" },
   ];
 
   return (
@@ -257,7 +257,7 @@ export default function Stats({ language }: { language: "en" | "ur" }) {
             color: "var(--text-primary)",
           }}
         >
-          {language === "en" ? "By the Numbers" : "شماریاتی خاکہ"}
+          {"By the Numbers"}
         </h4>
         <h4
           className="arabic-text"
@@ -267,7 +267,7 @@ export default function Stats({ language }: { language: "en" | "ur" }) {
             color: "var(--gold-primary)",
           }}
         >
-          {language === "en" ? "اعداد و شمار" : "اعداد و شمار"}
+          {"Statistics"}
         </h4>
       </div>
 
@@ -288,7 +288,7 @@ export default function Stats({ language }: { language: "en" | "ur" }) {
             key={idx}
             target={stat.target}
             suffix={stat.suffix}
-            label={language === "en" ? stat.label.en : stat.label.ur}
+            label={stat.label}
           />
         ))}
       </div>

@@ -4,13 +4,11 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 interface NavbarProps {
-  language: "en" | "ur";
-  setLanguage: (lang: "en" | "ur") => void;
   theme: "dark" | "light";
   setTheme: (theme: "dark" | "light") => void;
 }
 
-export default function Navbar({ language, setLanguage, theme, setTheme }: NavbarProps) {
+export default function Navbar({ theme, setTheme }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -27,13 +25,13 @@ export default function Navbar({ language, setLanguage, theme, setTheme }: Navba
   }, []);
 
   const navLinks = [
-    { id: "hero", en: "Home", ur: "صفحہ اول" },
-    { id: "about", en: "About", ur: "سوانح حیات" },
-    { id: "stats", en: "Stats", ur: "اعداد و شمار" },
-    { id: "publications", en: "Shelf", ur: "کتب خانہ" },
-    { id: "tasbih", en: "Tasbih", ur: "تسبیح کاؤنٹر" },
-    { id: "map", en: "Map", ur: "نقشہ" },
-    { id: "gallery", en: "Gallery", ur: "تصاویر" },
+    { id: "hero", en: "Home" },
+    { id: "about", en: "About" },
+    { id: "stats", en: "Stats" },
+    { id: "publications", en: "Shelf" },
+    { id: "tasbih", en: "Tasbih" },
+    { id: "map", en: "Map" },
+    { id: "gallery", en: "Gallery" },
   ];
 
   return (
@@ -97,7 +95,7 @@ export default function Navbar({ language, setLanguage, theme, setTheme }: Navba
             className="arabic-text"
             style={{ fontSize: "16px", fontWeight: "bold", lineHeight: "1.2", letterSpacing: "0.1em" }}
           >
-            مکھدوم
+            Makhdoom
           </span>
           <span
             className="meta-text"
@@ -145,7 +143,7 @@ export default function Navbar({ language, setLanguage, theme, setTheme }: Navba
               }
             }}
           >
-            {language === "en" ? link.en : link.ur}
+            {link.en}
             {/* Elegant Hover Underline sliding from left */}
             <span
               className="nav-underline"
@@ -199,7 +197,6 @@ export default function Navbar({ language, setLanguage, theme, setTheme }: Navba
 
         {/* Language Slider Toggle */}
         <div
-          onClick={() => setLanguage(language === "en" ? "ur" : "en")}
           data-cursor="crescent"
           style={{
             width: "80px",
@@ -227,8 +224,7 @@ export default function Navbar({ language, setLanguage, theme, setTheme }: Navba
               top: "2px",
             }}
             animate={{
-              left: language === "en" ? "3px" : "39px",
-            }}
+              left: "3px"}}
             transition={{ type: "spring", stiffness: 300, damping: 25 }}
           />
           <span
@@ -237,9 +233,7 @@ export default function Navbar({ language, setLanguage, theme, setTheme }: Navba
               fontSize: "9px",
               zIndex: 1,
               fontWeight: "bold",
-              color: language === "en" ? "var(--midnight-navy)" : "var(--text-muted)",
-              transition: "color 0.3s ease",
-            }}
+              color: "var(--midnight-navy)"}}
           >
             EN
           </span>
@@ -249,12 +243,12 @@ export default function Navbar({ language, setLanguage, theme, setTheme }: Navba
               fontSize: "10px",
               zIndex: 1,
               fontWeight: "bold",
-              color: language === "ur" ? "var(--midnight-navy)" : "var(--text-muted)",
+              color: "var(--text-muted)",
               transition: "color 0.3s ease",
               transform: "translateY(-1px)",
             }}
           >
-            اردو
+            English (US)
           </span>
         </div>
 
@@ -348,7 +342,7 @@ export default function Navbar({ language, setLanguage, theme, setTheme }: Navba
                 gap: "4px",
               }}
             >
-              <span>{link.ur}</span>
+              <span></span>
               <span
                 className="english-heading"
                 style={{ fontSize: "14px", color: "var(--text-secondary)", letterSpacing: "0.2em", textTransform: "uppercase" }}
