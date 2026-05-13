@@ -34,76 +34,92 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
   ];
 
   return (
-    <nav
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "80px",
-        zIndex: 9999,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "0 5%",
-        transition: "var(--transition-smooth)",
-        backgroundColor: isScrolled
-          ? theme === "dark"
-            ? "rgba(5, 11, 26, 0.9)"
-            : "rgba(245, 237, 216, 0.9)"
-          : "transparent",
-        borderBottom: isScrolled
-          ? `1px solid ${theme === "dark" ? "rgba(200, 169, 110, 0.2)" : "rgba(139, 110, 58, 0.2)"}`
-          : "1px solid transparent",
-        backdropFilter: isScrolled ? "blur(16px)" : "none",
-      }}
-    >
-      {/* 1. Left: Tughra Calligraphy Emblem Logo */}
-      <a
-        href="#hero"
-        style={{ display: "flex", alignItems: "center", gap: "10px", color: "var(--gold-primary)" }}
-        data-cursor="crescent"
+    <>
+      {/* 0. Top Fixed Bismillah Bar */}
+      <div
+        className="bismillah-bar arabic-text"
+        style={{
+          position: "fixed",
+          top: "80px",
+          left: 0,
+          width: "100%",
+          zIndex: 9990,
+          background: "linear-gradient(90deg, #B0156A, #0D47A1, #1B5E20)",
+          padding: "6px 2rem",
+          textAlign: "center",
+          fontFamily: "var(--font-amiri), serif",
+          fontSize: "15px",
+          color: "rgba(255,255,255,0.95)",
+          letterSpacing: "4px",
+          boxShadow: "0 2px 10px rgba(0,0,0,0.2)",
+        }}
       >
-        <svg
-          viewBox="0 0 100 100"
-          width="44"
-          height="44"
-          style={{ filter: "drop-shadow(0 0 5px rgba(200, 169, 110, 0.5))" }}
+        بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
+      </div>
+
+      <nav
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "80px",
+          zIndex: 9999,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "0 5%",
+          transition: "var(--transition-smooth)",
+          backgroundColor: isScrolled
+            ? theme === "dark"
+              ? "rgba(5, 11, 26, 0.92)"
+              : "rgba(245, 237, 216, 0.92)"
+            : "rgba(5, 11, 26, 0.4)",
+          borderBottom: isScrolled
+            ? `1px solid ${theme === "dark" ? "rgba(200, 169, 110, 0.2)" : "rgba(139, 110, 58, 0.2)"}`
+            : "1px solid rgba(255,255,255,0.05)",
+          backdropFilter: isScrolled ? "blur(16px)" : "blur(8px)",
+        }}
+      >
+        {/* 1. Left: Tughra Calligraphy Emblem Logo */}
+        <a
+          href="#hero"
+          style={{ display: "flex", alignItems: "center", gap: "10px", color: "var(--gold-primary)", textDecoration: "none" }}
+          data-cursor="crescent"
         >
-          <circle cx="50" cy="50" r="45" fill="none" stroke="var(--gold-primary)" strokeWidth="1.5" />
-          <circle cx="50" cy="50" r="41" fill="none" stroke="var(--gold-dim)" strokeWidth="0.5" strokeDasharray="3,3" />
-          {/* Ornate Tughra Monogram Drawing */}
-          <path
-            d="M 50,20 C 35,20 28,40 45,55 Q 50,60 50,80 M 50,20 C 65,20 72,40 55,55 Q 50,60 50,80"
-            fill="none"
-            stroke="var(--gold-primary)"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-          <path
-            d="M 38,40 Q 50,45 62,40 M 35,50 Q 50,55 65,50 M 44,62 Q 50,65 56,62"
-            fill="none"
-            stroke="var(--gold-light)"
-            strokeWidth="1.5"
-          />
-          {/* Center Calligraphy Dot */}
-          <circle cx="50" cy="32" r="3" fill="var(--gold-primary)" />
-        </svg>
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-          <span
-            className="arabic-text"
-            style={{ fontSize: "16px", fontWeight: "bold", lineHeight: "1.2", letterSpacing: "0.1em" }}
+          <div
+            style={{
+              width: "44px",
+              height: "44px",
+              borderRadius: "50%",
+              background: "linear-gradient(135deg, #E91E8C, #1565C0)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              boxShadow: "0 0 15px rgba(233, 30, 140, 0.4)",
+              color: "#FFFFFF",
+              fontFamily: "var(--font-amiri), serif",
+              fontSize: "24px",
+              fontWeight: "bold",
+            }}
           >
-            Makhdoom
-          </span>
-          <span
-            className="meta-text"
-            style={{ fontSize: "8px", color: "var(--text-muted)", letterSpacing: "0.15em" }}
-          >
-            MUHABBAT MISSION
-          </span>
-        </div>
-      </a>
+            م
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <span
+              className="english-heading"
+              style={{ fontSize: "16px", fontWeight: "bold", lineHeight: "1.2", letterSpacing: "0.05em", color: "#FFFFFF" }}
+            >
+              Muhabbat <span style={{ color: "#FF6EC7" }}>Mission</span>
+            </span>
+            <span
+              className="meta-text"
+              style={{ fontSize: "9px", color: "var(--gold-primary)", letterSpacing: "0.15em", fontWeight: "bold" }}
+            >
+              INTERNATIONAL
+            </span>
+          </div>
+        </a>
 
       {/* 2. Center: Nav Links */}
       <div
@@ -353,5 +369,6 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
         </div>
       )}
     </nav>
+    </>
   );
 }

@@ -9,6 +9,9 @@ import Hero from "../components/Hero";
 import QuoteMarquee from "../components/QuoteMarquee";
 import About from "../components/About";
 import Mission from "../components/Mission";
+import QuranReflection from "../components/QuranReflection";
+import Tours from "../components/Tours";
+import Welfare from "../components/Welfare";
 import Stats from "../components/Stats";
 import Events from "../components/Events";
 import Publications from "../components/Publications";
@@ -59,6 +62,9 @@ export default function Home() {
             {/* Section 1: WebGL 12-pointed Star Morpher */}
             <Hero  />
 
+            {/* Section 1.5: Daily Quranic Reflection */}
+            <QuranReflection />
+
             {/* Section 2: Infinite momentum-reversing Quote Ticker */}
             <QuoteMarquee />
 
@@ -73,6 +79,12 @@ export default function Home() {
 
             {/* Section 5: Bento 3D Tilt Events calendar */}
             <Events  />
+
+            {/* Section 5.5: Sacred Journeys & Retreats Switcher */}
+            <Tours />
+
+            {/* Section 5.6: Serving Humanity Welfare */}
+            <Welfare />
 
             {/* Section 6: 3D Perspective Publications Shelf */}
             <Publications  />
