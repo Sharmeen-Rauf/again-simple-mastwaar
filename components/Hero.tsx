@@ -336,17 +336,43 @@ export default function Hero() {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: "14px",
+            gap: "16px",
           }}
         >
+          {/* Unique Breathtaking Floating Arched Sanctuary Image */}
+          <div
+            style={{
+              width: "180px",
+              height: "220px",
+              borderRadius: "90px 90px 8px 8px",
+              border: "2px solid var(--gold-primary)",
+              overflow: "hidden",
+              boxShadow: "0 15px 35px rgba(255, 20, 147, 0.4)",
+              marginBottom: "10px",
+              position: "relative",
+            }}
+          >
+            <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", background: "linear-gradient(to bottom, rgba(255,20,147,0.2), transparent)", zIndex: 2 }} />
+            <img
+              src="/makhdoompur-sharif-chakwal-webp-scaled.jpg"
+              alt="Chakwal Sanctuary"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                filter: "contrast(1.1) brightness(0.95)",
+              }}
+            />
+          </div>
+
           {/* Line 1: Bismillah */}
           <h2
             ref={title1Ref}
             className="arabic-text"
             style={{
               color: "var(--gold-light)",
-              fontSize: "clamp(20px, 3.5vw, 32px)",
-              letterSpacing: "0.25em",
+              fontSize: "clamp(11px, 1.4vw, 15px)",
+              letterSpacing: "0.3em",
               fontWeight: "normal",
               textShadow: "0 0 10px rgba(240, 217, 160, 0.3)",
               marginBottom: "5px",
@@ -355,32 +381,32 @@ export default function Hero() {
             IN THE NAME OF GOD, THE MOST GRACIOUS, THE MOST MERCIFUL
           </h2>
 
-          {/* Line 2: Muhabbat Mission Urdu Title */}
+          {/* Line 2: Muhabbat Mission Main Title */}
           <h1
             ref={title2Ref}
             className="english-heading"
             style={{
               color: "var(--gold-primary)",
-              fontSize: "clamp(48px, 8vw, 108px)",
+              fontSize: "clamp(28px, 4.5vw, 52px)",
               fontWeight: "bold",
               lineHeight: "1.2",
-              textShadow: "0 4px 15px rgba(0,0,0,0.6)",
+              textShadow: "0 4px 15px rgba(255, 20, 147, 0.6)",
               margin: "5px 0",
-              fontFamily: "var(--font-noto-urdu), serif",
+              letterSpacing: "0.05em",
             }}
             data-cursor="eye"
           >
             MUHABBAT MISSION INTERNATIONAL
           </h1>
 
-          {/* Line 3: English Title */}
+          {/* Line 3: English Subtitle */}
           <div
             ref={title3Ref}
             className="english-heading"
             style={{
               color: "var(--gold-light)",
-              fontSize: "clamp(12px, 2.5vw, 20px)",
-              letterSpacing: "0.45em",
+              fontSize: "clamp(11px, 2vw, 18px)",
+              letterSpacing: "0.35em",
               fontWeight: 500,
               textTransform: "uppercase",
               marginTop: "5px",
@@ -395,7 +421,7 @@ export default function Hero() {
             className="meta-text"
             style={{
               color: "var(--text-secondary)",
-              fontSize: "clamp(9px, 1.5vw, 11px)",
+              fontSize: "clamp(9px, 1.4vw, 11px)",
               letterSpacing: "0.22em",
               marginTop: "10px",
               opacity: 0.8,
