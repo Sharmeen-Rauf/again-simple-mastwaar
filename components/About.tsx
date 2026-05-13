@@ -155,18 +155,18 @@ export default function About() {
           style={{
             position: "relative",
             width: "100%",
-            borderRadius: "4px",
+            borderRadius: "8px",
             overflow: "hidden",
-            boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.7)",
-            border: "1px solid var(--gold-dim)",
+            boxShadow: "0 25px 50px -12px rgba(255, 20, 147, 0.25)",
+            border: "1px solid var(--gold-primary)",
             aspectRatio: "4/5",
-            backgroundColor: "var(--deep-maroon)",
+            backgroundColor: "var(--midnight-navy)",
           }}
         >
           {/* Duotone Layer Image */}
           <img
             ref={imageRef}
-            src="/sufi_portrait.png"
+            src="/peer-saab.png"
             alt="Makhdoom Mahmood Mastwaar Qalandar"
             className="portrait-image"
             style={{
@@ -174,13 +174,13 @@ export default function About() {
               height: "100%",
               objectFit: "cover",
               filter: "contrast(1.1) brightness(0.95)",
-              mixBlendMode: "luminosity",
-              opacity: 0.85,
+              mixBlendMode: "normal",
+              opacity: 0.9,
               transition: "all 0.5s ease",
             }}
           />
 
-          {/* Duotone Multiplier Cover (Maroon to Gold) */}
+          {/* Duotone Multiplier Cover (Cyber Pink to Cyan) */}
           <div
             className="duotone-overlay"
             style={{
@@ -189,14 +189,14 @@ export default function About() {
               left: 0,
               width: "100%",
               height: "100%",
-              background: "linear-gradient(to bottom, rgba(45, 10, 10, 0.3), rgba(200, 169, 110, 0.5))",
-              mixBlendMode: "multiply",
+              background: "linear-gradient(to bottom, rgba(255, 20, 147, 0.25), rgba(0, 168, 232, 0.35))",
+              mixBlendMode: "color",
               pointerEvents: "none",
               transition: "all 0.5s ease",
             }}
           />
 
-          {/* Large Floating Calligraphy Name Overlay (12% Opacity) */}
+          {/* Large Floating Calligraphy Name Overlay */}
           <div
             className="arabic-text"
             style={{
@@ -205,10 +205,11 @@ export default function About() {
               right: "20px",
               fontSize: "clamp(24px, 5vw, 64px)",
               color: "var(--gold-light)",
-              opacity: 0.12,
+              opacity: 0.2,
               userSelect: "none",
               pointerEvents: "none",
               lineHeight: 1.1,
+              textShadow: "0 0 15px rgba(255, 20, 147, 0.6)",
             }}
           >
             Mahmood Mastwaar Qalandar
@@ -228,8 +229,8 @@ export default function About() {
           <span
             className="meta-text"
             style={{
-              color: "var(--gold-dim)",
-              fontSize: "var(--t8)",
+              color: "var(--copper-accent)",
+              fontSize: "12px",
               fontWeight: "bold",
               letterSpacing: "0.25em",
             }}
@@ -242,34 +243,36 @@ export default function About() {
             className="english-heading"
             style={{
               color: "var(--text-primary)",
-              fontSize: "var(--t3)",
+              fontSize: "clamp(28px, 4vw, 42px)",
               lineHeight: "1.15",
-              fontWeight: "normal",
+              fontWeight: "bold",
+              textShadow: "0 0 20px rgba(0, 168, 232, 0.4)",
             }}
           >
             Makhdoom Mahmood Mastwaar Qalandar
           </h2>
 
-          {/* Urdu Subheading (RTL Right Aligned) */}
+          {/* Urdu Subheading */}
           <h3
             className="english-heading"
             style={{
               color: "var(--gold-light)",
-              fontSize: "var(--t4)",
+              fontSize: "24px",
               fontWeight: "bold",
               textAlign: "right",
               margin: "10px 0",
+              textShadow: "0 0 10px rgba(255, 20, 147, 0.5)",
             }}
           >
             Makhdoom Mahmood Mastwaar Qalandarؒ
           </h3>
 
-          {/* Bio Description (Each paragraph treated as a stagger line) */}
+          {/* Bio Description */}
           <div
             className="english-body"
             style={{
               color: "var(--text-secondary)",
-              fontSize: "15px",
+              fontSize: "16px",
               lineHeight: "1.7",
               display: "flex",
               flexDirection: "column",
@@ -291,15 +294,15 @@ export default function About() {
               viewBox="0 0 80 80"
               width="72"
               height="72"
-              style={{ filter: "drop-shadow(0 0 8px rgba(200, 169, 110, 0.4))" }}
+              style={{ filter: "drop-shadow(0 0 12px rgba(0, 200, 83, 0.6))" }}
             >
               <circle
                 cx="40"
                 cy="40"
                 r="36"
                 fill="none"
-                stroke="var(--gold-primary)"
-                strokeWidth="1.5"
+                stroke="var(--emerald-glow)"
+                strokeWidth="2"
                 className="seal-stroke"
               />
               <circle
@@ -307,16 +310,16 @@ export default function About() {
                 cy="40"
                 r="31"
                 fill="none"
-                stroke="var(--gold-dim)"
-                strokeWidth="0.5"
-                strokeDasharray="2,2"
+                stroke="var(--gold-primary)"
+                strokeWidth="1"
+                strokeDasharray="4,4"
                 className="seal-stroke"
               />
               {/* Calligraphy 'Muhabbat' inside Seal */}
               <text
                 x="40"
                 y="46"
-                fill="var(--gold-primary)"
+                fill="var(--gold-light)"
                 fontSize="22"
                 textAnchor="middle"
                 className="arabic-text"
@@ -328,13 +331,13 @@ export default function About() {
             <div style={{ display: "flex", flexDirection: "column" }}>
               <span
                 className="english-heading"
-                style={{ fontSize: "12px", color: "var(--gold-primary)", letterSpacing: "0.1em" }}
+                style={{ fontSize: "13px", color: "var(--gold-primary)", letterSpacing: "0.1em", fontWeight: "bold" }}
               >
                 SEAL OF LOVE
               </span>
               <span
                 className="meta-text"
-                style={{ fontSize: "9px", color: "var(--text-muted)", letterSpacing: "0.1em" }}
+                style={{ fontSize: "10px", color: "var(--copper-accent)", letterSpacing: "0.1em", fontWeight: "bold" }}
               >
                 SACRED COVENANT
               </span>

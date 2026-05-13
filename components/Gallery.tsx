@@ -9,7 +9,7 @@ interface VideoCard {
   duration: string;
   category: string;
   speaker: string;
-  bgGradient: string;
+  bgImage: string;
 }
 
 export default function Gallery() {
@@ -18,27 +18,51 @@ export default function Gallery() {
   const videos: VideoCard[] = [
     {
       id: 1,
-      title: "The Melody of Divine Love — Live Qawwali",
-      category: "QAWWALI",
+      title: "113th 3-Day Spiritual Retreat Assembly",
+      category: "RETREAT",
       duration: "18:42",
-      speaker: "International Qawwal Assembly",
-      bgGradient: "linear-gradient(135deg, #1f0808 0%, #080d1a 100%)",
+      speaker: "Makhdoom Mastwaar Qalandar",
+      bgImage: "/113-3day-spiritual-retreat-29jan2020-ft-img-68787027aaddf.jpg",
     },
     {
       id: 2,
-      title: "The Alchemy of the Heart — Discourse",
-      category: "DISCOURSE",
+      title: "Darbar Sharif Grand Illumination",
+      category: "ILLUMINATION",
       duration: "45:10",
-      speaker: "Makhdoom Mahmood Mastwaar Qalandar",
-      bgGradient: "linear-gradient(135deg, #0d1a10 0%, #1f0814 100%)",
+      speaker: "Chakwal Darbar Sharif",
+      bgImage: "/12-darbar-lighting-08octo2022-ft-img.jpg",
     },
     {
       id: 3,
-      title: "The Circle of Remembrance — Dhikr",
-      category: "DHIKR",
+      title: "Milad Celebration Thoa Bahadur",
+      category: "MILAD",
       duration: "32:15",
-      speaker: "Muhabbat Mission Assembly",
-      bgGradient: "linear-gradient(135deg, #1f1a08 0%, #050b1a 100%)",
+      speaker: "International Milad Circle",
+      bgImage: "/13-milad-thoa-bahadur-07oct2022-ft-img-1.jpg",
+    },
+    {
+      id: 4,
+      title: "Lahore Spiritual Node Assembly",
+      category: "GATHERING",
+      duration: "24:50",
+      speaker: "Lahore Circle Devotees",
+      bgImage: "/14-lahore-visit-01oct2022-ft-img.jpg",
+    },
+    {
+      id: 5,
+      title: "National Milad Conference Broadcast",
+      category: "CONFERENCE",
+      duration: "58:30",
+      speaker: "Muhabbat Mission Global",
+      bgImage: "/17-national-milad-celebration-10sep2022-ft-img.jpg",
+    },
+    {
+      id: 6,
+      title: "Urs Grand Majlis Commemoration",
+      category: "MAJLIS",
+      duration: "41:05",
+      speaker: "Makhdoom Mastwaar Qalandar",
+      bgImage: "/27-majlis-mastwaar-23july2022-ft-img.jpg",
     },
   ];
 
@@ -62,7 +86,7 @@ export default function Gallery() {
           left: 0,
           width: "100%",
           height: "100%",
-          backgroundImage: "radial-gradient(rgba(200, 169, 110, 0.02) 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(rgba(0, 168, 232, 0.05) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
           pointerEvents: "none",
           zIndex: 1,
@@ -70,11 +94,11 @@ export default function Gallery() {
       />
 
       {/* Section Header */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: "1px solid rgba(200, 169, 110, 0.2)", paddingBottom: "20px", marginBottom: "60px", position: "relative", zIndex: 5 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: "1px solid rgba(255, 20, 147, 0.3)", paddingBottom: "20px", marginBottom: "60px", position: "relative", zIndex: 5 }}>
         <h4 className="english-heading" style={{ fontSize: "var(--t4)", color: "var(--text-primary)" }}>
-          {"Cinematic Library"}
+          {"Cinematic Broadcasts & Visual Archives"}
         </h4>
-        <span className="meta-text" style={{ fontSize: "10px", color: "var(--text-muted)" }}>
+        <span className="meta-text" style={{ fontSize: "10px", color: "var(--text-secondary)" }}>
           Broadcast Archives ✦
         </span>
       </div>
@@ -101,9 +125,8 @@ export default function Gallery() {
             style={{
               minWidth: "350px",
               flex: "1 0 350px",
-              background: vid.bgGradient,
-              height: "240px",
-              borderRadius: "4px",
+              height: "260px",
+              borderRadius: "8px",
               border: "1px solid var(--gold-dim)",
               padding: "30px",
               display: "flex",
@@ -112,17 +135,48 @@ export default function Gallery() {
               cursor: "pointer",
               position: "relative",
               overflow: "hidden",
-              boxShadow: "0 15px 30px rgba(0,0,0,0.5)",
+              boxShadow: "0 15px 30px rgba(0,0,0,0.6)",
             }}
             className="video-archive-card"
           >
+            {/* Background Image Cover */}
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                backgroundImage: `url('${vid.bgImage}')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                opacity: 0.45,
+                transition: "all 0.5s ease",
+                zIndex: 1,
+              }}
+              className="vid-bg-cover"
+            />
+            {/* Deep Cyber Vignette */}
+            <div
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                background: "linear-gradient(to top, rgba(4,8,18,0.98) 0%, rgba(15,23,42,0.7) 100%)",
+                zIndex: 2,
+              }}
+            />
+
             {/* Top Row: Category and Duration */}
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", zIndex: 3 }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", zIndex: 3, position: "relative" }}>
               <span
                 className="meta-text"
                 style={{
                   color: "var(--gold-primary)",
-                  fontSize: "10px",
+                  fontSize: "11px",
+                  fontWeight: "bold",
                   letterSpacing: "0.15em",
                 }}
               >
@@ -131,7 +185,7 @@ export default function Gallery() {
               <span
                 className="meta-text"
                 style={{
-                  color: "var(--text-muted)",
+                  color: "var(--copper-accent)",
                   fontSize: "10px",
                 }}
               >
@@ -158,32 +212,33 @@ export default function Gallery() {
             >
               <div
                 style={{
-                  width: "50px",
-                  height: "50px",
+                  width: "55px",
+                  height: "55px",
                   borderRadius: "50%",
-                  backgroundColor: "rgba(200, 169, 110, 0.9)",
+                  backgroundColor: "rgba(255, 20, 147, 0.9)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  boxShadow: "0 0 15px var(--gold-light)",
+                  boxShadow: "0 0 20px var(--gold-light)",
                 }}
               >
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="var(--midnight-navy)">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="var(--text-primary)">
                   <path d="M8 5v14l11-7z" />
                 </svg>
               </div>
-              <span className="meta-text" style={{ fontSize: "9px", color: "var(--gold-light)", letterSpacing: "0.1em" }}>
+              <span className="meta-text" style={{ fontSize: "10px", color: "var(--text-primary)", letterSpacing: "0.1em", fontWeight: "bold" }}>
                 CLICK TO PLAY
               </span>
             </div>
 
             {/* Bottom Row: Title and Speaker */}
-            <div style={{ zIndex: 3, display: "flex", flexDirection: "column", gap: "6px" }}>
+            <div style={{ zIndex: 3, display: "flex", flexDirection: "column", gap: "6px", position: "relative" }}>
               <h5
                 className="english-heading"
                 style={{
                   color: "var(--text-primary)",
-                  fontSize: "18px",
+                  fontSize: "20px",
+                  fontWeight: "bold",
                   lineHeight: "1.3",
                 }}
               >
@@ -193,37 +248,21 @@ export default function Gallery() {
                 className="meta-text"
                 style={{
                   color: "var(--text-secondary)",
-                  fontSize: "10px",
+                  fontSize: "11px",
                   letterSpacing: "0.1em",
                 }}
               >
                 {vid.speaker}
               </span>
             </div>
-
-            {/* Subtle background arabesque line detail */}
-            <div
-              className="card-bg-mesh"
-              style={{
-                position: "absolute",
-                bottom: "-30px",
-                right: "-30px",
-                width: "120px",
-                height: "120px",
-                opacity: 0.1,
-                backgroundImage: "radial-gradient(circle, var(--gold-dim) 1px, transparent 1px)",
-                backgroundSize: "10px 10px",
-                transition: "all 0.5s ease",
-              }}
-            />
           </div>
         ))}
       </div>
 
-      {/* SACRED MASONRY IMAGE/VECTOR GALLERY (Grayscale to Gold-Fringed Hover) */}
+      {/* SACRED MASONRY IMAGE/VECTOR GALLERY */}
       <div style={{ marginTop: "80px" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: "40px" }}>
-          <h4 className="english-heading" style={{ fontSize: "20px", color: "var(--gold-primary)" }}>
+          <h4 className="english-heading" style={{ fontSize: "20px", color: "var(--gold-primary)", fontWeight: "bold" }}>
             {"Sacred Geometry & Manuscripts"}
           </h4>
           <span className="meta-text" style={{ fontSize: "10px", color: "var(--text-muted)" }}>
@@ -343,7 +382,7 @@ export default function Gallery() {
               left: 0,
               width: "100vw",
               height: "100vh",
-              backgroundColor: "rgba(5, 11, 26, 0.9)",
+              backgroundColor: "rgba(4, 8, 18, 0.92)",
               backdropFilter: "blur(15px)",
               zIndex: 999999,
               display: "flex",
@@ -361,9 +400,9 @@ export default function Gallery() {
               style={{
                 width: "100%",
                 maxWidth: "750px",
-                backgroundColor: "rgba(5, 11, 26, 0.85)",
+                backgroundColor: "rgba(15, 23, 42, 0.9)",
                 border: "2px solid var(--gold-primary)",
-                borderRadius: "4px",
+                borderRadius: "8px",
                 overflow: "hidden",
                 boxShadow: "0 25px 50px rgba(0,0,0,0.8)",
                 display: "flex",
@@ -377,15 +416,15 @@ export default function Gallery() {
                   justifyContent: "space-between",
                   alignItems: "center",
                   padding: "20px 30px",
-                  borderBottom: "1px solid rgba(200,169,110,0.2)",
-                  backgroundColor: "rgba(5, 11, 26, 0.5)",
+                  borderBottom: "1px solid rgba(255,20,147,0.3)",
+                  backgroundColor: "rgba(4, 8, 18, 0.7)",
                 }}
               >
                 <div>
-                  <span className="meta-text" style={{ fontSize: "9px", color: "var(--gold-primary)" }}>
+                  <span className="meta-text" style={{ fontSize: "10px", color: "var(--gold-primary)", fontWeight: "bold" }}>
                     NOW STREAMING ✦ {activeVideo.category}
                   </span>
-                  <h5 className="english-heading" style={{ fontSize: "18px", color: "var(--text-primary)", marginTop: "4px" }}>
+                  <h5 className="english-heading" style={{ fontSize: "20px", color: "var(--text-primary)", marginTop: "4px", fontWeight: "bold" }}>
                     {activeVideo.title}
                   </h5>
                 </div>
@@ -409,8 +448,10 @@ export default function Gallery() {
               <div
                 style={{
                   width: "100%",
-                  height: "300px",
-                  backgroundColor: "#03060d",
+                  height: "350px",
+                  backgroundImage: `url('${activeVideo.bgImage}')`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
                   display: "flex",
                   flexDirection: "column",
                   alignItems: "center",
@@ -419,11 +460,11 @@ export default function Gallery() {
                   gap: "20px",
                 }}
               >
-                {/* Floating particle/stars background */}
-                <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", opacity: 0.2, backgroundImage: "radial-gradient(var(--gold-primary) 0.5px, transparent 0.5px)", backgroundSize: "15px 15px" }} />
+                {/* Floating particle/gradient background */}
+                <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", background: "linear-gradient(rgba(4,8,18,0.7), rgba(4,8,18,0.95))" }} />
 
                 {/* Animated Equalizer Waveform Bars */}
-                <div style={{ display: "flex", gap: "5px", alignItems: "flex-end", height: "60px", zIndex: 2 }}>
+                <div style={{ display: "flex", gap: "6px", alignItems: "flex-end", height: "60px", zIndex: 2 }}>
                   {Array.from({ length: 24 }).map((_, i) => {
                     const duration = ((i * 7) % 5) / 10 + 0.4;
                     const delay = ((i * 3) % 4) / 10;
@@ -431,11 +472,12 @@ export default function Gallery() {
                       <div
                         key={i}
                         style={{
-                          width: "4px",
+                          width: "5px",
                           backgroundColor: "var(--gold-primary)",
                           borderRadius: "2px",
                           animation: `equalizerHeight ${duration}s ease-in-out infinite alternate`,
                           animationDelay: `${delay}s`,
+                          boxShadow: "0 0 10px var(--gold-light)",
                         }}
                       />
                     );
@@ -445,20 +487,20 @@ export default function Gallery() {
                 {/* Centered Large Play/Pause */}
                 <div
                   style={{
-                    width: "60px",
-                    height: "60px",
+                    width: "65px",
+                    height: "65px",
                     borderRadius: "50%",
-                    backgroundColor: "rgba(200, 169, 110, 0.1)",
-                    border: "1px solid var(--gold-primary)",
+                    backgroundColor: "rgba(255, 20, 147, 0.2)",
+                    border: "2px solid var(--gold-primary)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     cursor: "pointer",
                     zIndex: 2,
-                    boxShadow: "0 0 15px rgba(200,169,110,0.1)",
+                    boxShadow: "0 0 20px rgba(255,20,147,0.4)",
                   }}
                 >
-                  <svg viewBox="0 0 24 24" width="24" height="24" fill="var(--gold-primary)">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="var(--text-primary)">
                     <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
                   </svg>
                 </div>
@@ -468,23 +510,23 @@ export default function Gallery() {
               <div
                 style={{
                   padding: "24px 30px",
-                  backgroundColor: "rgba(5, 11, 26, 0.9)",
+                  backgroundColor: "rgba(4, 8, 18, 0.95)",
                   display: "flex",
                   flexDirection: "column",
                   gap: "14px",
                 }}
               >
                 {/* Custom glowing timeline rail */}
-                <div style={{ position: "relative", width: "100%", height: "4px", backgroundColor: "rgba(255,255,255,0.1)", borderRadius: "2px" }}>
-                  <div style={{ position: "absolute", top: 0, left: 0, width: "35%", height: "100%", backgroundColor: "var(--gold-primary)", borderRadius: "2px", boxShadow: "0 0 6px var(--gold-light)" }} />
-                  <div style={{ position: "absolute", top: "-3px", left: "35%", width: "10px", height: "10px", borderRadius: "50%", backgroundColor: "white", boxShadow: "0 0 8px var(--gold-light)" }} />
+                <div style={{ position: "relative", width: "100%", height: "6px", backgroundColor: "rgba(255,255,255,0.1)", borderRadius: "3px" }}>
+                  <div style={{ position: "absolute", top: 0, left: 0, width: "35%", height: "100%", backgroundColor: "var(--gold-primary)", borderRadius: "3px", boxShadow: "0 0 10px var(--gold-light)" }} />
+                  <div style={{ position: "absolute", top: "-4px", left: "35%", width: "14px", height: "14px", borderRadius: "50%", backgroundColor: "var(--text-primary)", boxShadow: "0 0 12px var(--gold-light)" }} />
                 </div>
 
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <span className="meta-text" style={{ fontSize: "10px", color: "var(--text-secondary)" }}>
+                  <span className="meta-text" style={{ fontSize: "11px", color: "var(--text-secondary)", fontWeight: "bold" }}>
                     05:42 / {activeVideo.duration}
                   </span>
-                  <span className="meta-text" style={{ fontSize: "9px", color: "var(--gold-primary)", letterSpacing: "0.1em" }}>
+                  <span className="meta-text" style={{ fontSize: "10px", color: "var(--gold-primary)", letterSpacing: "0.15em", fontWeight: "bold" }}>
                     TRANSMISSION SECURE ✦ 1080P
                   </span>
                 </div>

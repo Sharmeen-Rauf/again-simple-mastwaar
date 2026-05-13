@@ -11,6 +11,7 @@ interface BookData {
   quote: string;
   translation: string;
   desc: string;
+  coverImg: string;
 }
 
 export default function Publications() {
@@ -26,6 +27,7 @@ export default function Publications() {
       quote: "الْقُرْآنُ هُوَ بَحْرُ الْمَحَبَّةِ",
       translation: "The Quran is the limitless ocean of divine love.",
       desc: "A comprehensive spiritual commentary on the Holy Quran, unraveling the dimensions of love, unity, and Sufi coordinates woven into the sacred verses.",
+      coverImg: "/Tafseer-e-Mastwaar.jpg",
     },
     {
       id: 1,
@@ -35,6 +37,7 @@ export default function Publications() {
       quote: "الْمَقَامُ الْأَعْلَى هُوَ الْفَنَاءُ",
       translation: "The highest spiritual station is absolute self-annihilation.",
       desc: "An illuminating discourse on the ultimate stations of the spiritual journey and the sublime presence of the Beloved.",
+      coverImg: "/maqame-mahmood.png",
     },
     {
       id: 2,
@@ -44,6 +47,7 @@ export default function Publications() {
       quote: "قَلْبُ الْمُؤْمِنِ عَرْشُ اللَّهِ",
       translation: "The heart of the lover is the throne of the Divine.",
       desc: "Exploring the heart as the true compass of the soul, where the Divine resides in silent splendor, transcending all physical structures.",
+      coverImg: "/makeen-e-dil.png",
     },
     {
       id: 3,
@@ -53,6 +57,7 @@ export default function Publications() {
       quote: "سِلْسِلَةُ الْقُلُوبِ مُتَّصِلَةٌ بِالْحُبِّ",
       translation: "The chain of hearts is joined by golden links of love.",
       desc: "Tracing the spiritual lineage of the path of beauty, demonstrating how light has passed from heart to heart through history.",
+      coverImg: "/silsila-dilbar-book (1).png",
     },
     {
       id: 4,
@@ -62,6 +67,7 @@ export default function Publications() {
       quote: "الأَسْرَارُ تَظْهَرُ لأَهْلِ الصِّدْقِ",
       translation: "Sacred secrets reveal themselves only to the sincere.",
       desc: "A compilation of ecstatic revelations, aphorisms, and profound mystical keys detailing the coordinates of the heart's alignment.",
+      coverImg: "/asraar-e-mastwaar-book.png",
     },
   ];
 
@@ -77,7 +83,7 @@ export default function Publications() {
 
   return (
     <section
-      id="publications"
+      id="shelf"
       style={{
         width: "100%",
         backgroundColor: "var(--midnight-navy)",
@@ -95,7 +101,7 @@ export default function Publications() {
           bottom: "10%",
           right: "-5%",
           fontSize: "12vw",
-          color: "rgba(200, 169, 110, 0.015)",
+          color: "rgba(0, 168, 232, 0.02)",
           userSelect: "none",
           pointerEvents: "none",
           lineHeight: "1",
@@ -105,11 +111,11 @@ export default function Publications() {
       </div>
 
       {/* Section Header */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: "1px solid rgba(200, 169, 110, 0.2)", paddingBottom: "20px", marginBottom: "80px", position: "relative", zIndex: 10 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", borderBottom: "1px solid rgba(255, 20, 147, 0.3)", paddingBottom: "20px", marginBottom: "80px", position: "relative", zIndex: 10 }}>
         <h4 className="english-heading" style={{ fontSize: "var(--t4)", color: "var(--text-primary)" }}>
-          {"The Sacred Bookshelf"}
+          {"The Sacred Bookshelf & Treatises"}
         </h4>
-        <span className="meta-text" style={{ fontSize: "10px", color: "var(--text-muted)" }}>
+        <span className="meta-text" style={{ fontSize: "10px", color: "var(--text-secondary)" }}>
           3D Perspective Scene ✦
         </span>
       </div>
@@ -149,7 +155,7 @@ export default function Publications() {
             const translateXVal = offset * 50;
 
             return (
-              <div
+               <div
                 key={book.id}
                 onClick={() => handleBookClick(book.id)}
                 data-cursor="explore"
@@ -182,72 +188,22 @@ export default function Publications() {
                       position: "absolute",
                       width: "100%",
                       height: "100%",
-                      backgroundColor: "var(--deep-maroon)",
-                      backgroundImage: "linear-gradient(135deg, rgba(200, 169, 110, 0.15), transparent)",
+                      backgroundColor: "var(--parchment)",
+                      backgroundImage: `url('${book.coverImg}')`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
                       border: "1px solid var(--gold-dim)",
                       borderRadius: "0 4px 4px 0",
                       transformStyle: "preserve-3d",
                       transformOrigin: "left center",
                       transform: isOpen ? "rotateY(-135deg) translateZ(1px)" : "rotateY(0deg) translateZ(1px)",
                       transition: "transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)",
-                      boxShadow: isActive ? "0 15px 30px rgba(0,0,0,0.6)" : "0 5px 15px rgba(0,0,0,0.4)",
+                      boxShadow: isActive ? "0 15px 30px rgba(0,0,0,0.8)" : "0 5px 15px rgba(0,0,0,0.5)",
                       zIndex: 4,
                     }}
                   >
-                    {/* Golden Ornate manuscript border detail */}
-                    <div
-                      style={{
-                        position: "absolute",
-                        top: "8px",
-                        left: "8px",
-                        right: "8px",
-                        bottom: "8px",
-                        border: "1px solid var(--gold-dim)",
-                        borderRadius: "2px",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        padding: "16px 8px",
-                      }}
-                    >
-                      {/* Top Corner Jewels */}
-                      <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--gold-primary)">
-                        <path d="M12 2 L22 12 L12 22 L2 12 Z" />
-                      </svg>
-
-                      {/* Cover Title */}
-                      <div style={{ textAlign: "center", display: "flex", flexDirection: "column", gap: "6px" }}>
-                        <h5
-                          className="english-heading"
-                          style={{
-                            color: "var(--gold-light)",
-                            fontSize: "14px",
-                            fontWeight: "bold",
-                            letterSpacing: "0.05em",
-                            lineHeight: "1.2",
-                          }}
-                        >
-                          {book.title.split("-")[0]}
-                        </h5>
-                        <span
-                          className="arabic-text"
-                          style={{
-                            fontSize: "16px",
-                            color: "var(--gold-primary)",
-                            lineHeight: "1.2",
-                          }}
-                        >
-                          {book.sub}
-                        </span>
-                      </div>
-
-                      {/* Bottom Ornate Crest */}
-                      <svg viewBox="0 0 24 24" width="16" height="16" fill="var(--gold-primary)" style={{ transform: "rotate(45deg)" }}>
-                        <rect x="6" y="6" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="1" />
-                        <circle cx="12" cy="12" r="3" />
-                      </svg>
-                    </div>
+                    {/* Dark gradient overlay to ensure spine border visibility */}
+                    <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", background: "linear-gradient(90deg, rgba(4,8,18,0.4) 0%, transparent 20%)" }} />
                   </div>
 
                   {/* 2. INNER PAGES FAN (Visible only when open) */}
@@ -261,7 +217,7 @@ export default function Publications() {
                       left: "5px",
                       backgroundColor: "var(--parchment)",
                       borderRadius: "0 3px 3px 0",
-                      boxShadow: "inset 4px 0 10px rgba(0,0,0,0.2)",
+                      boxShadow: "inset 4px 0 10px rgba(0,0,0,0.5)",
                       transformOrigin: "left center",
                       transform: isOpen ? "rotateY(-25deg)" : "rotateY(0deg)",
                       transition: "transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)",
@@ -278,7 +234,7 @@ export default function Publications() {
                       left: "5px",
                       backgroundColor: "var(--parchment)",
                       borderRadius: "0 3px 3px 0",
-                      boxShadow: "inset 4px 0 10px rgba(0,0,0,0.15)",
+                      boxShadow: "inset 4px 0 10px rgba(0,0,0,0.4)",
                       transformOrigin: "left center",
                       transform: isOpen ? "rotateY(-15deg)" : "rotateY(0deg)",
                       transition: "transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)",
@@ -295,7 +251,7 @@ export default function Publications() {
                       left: "5px",
                       backgroundColor: "var(--parchment-dark)",
                       borderRadius: "0 3px 3px 0",
-                      boxShadow: "inset 4px 0 10px rgba(0,0,0,0.1)",
+                      boxShadow: "inset 4px 0 10px rgba(0,0,0,0.3)",
                       transformOrigin: "left center",
                       transform: isOpen ? "rotateY(-5deg)" : "rotateY(0deg)",
                       transition: "transform 0.8s cubic-bezier(0.25, 1, 0.5, 1)",
@@ -306,8 +262,8 @@ export default function Publications() {
                     }}
                   >
                     {/* Calligraphy sample inside pages */}
-                    <div className="arabic-text" style={{ fontSize: "14px", color: "var(--deep-maroon)", opacity: 0.2, transform: "rotate(-10deg)" }}>
-                      Love of Qalandar
+                    <div className="english-heading" style={{ fontSize: "14px", color: "var(--gold-primary)", opacity: 0.4, transform: "rotate(-10deg)" }}>
+                      Muhabbat Mission
                     </div>
                   </div>
 
@@ -348,18 +304,18 @@ export default function Publications() {
           })}
         </div>
 
-        {/* CSS walnut wood bookshelf plank shelf */}
+        {/* CSS Cyber Walnut wood bookshelf plank shelf */}
         <div
           style={{
             width: "100%",
             height: "20px",
-            background: "linear-gradient(to bottom, #1f1107 0%, #0d0602 100%)",
-            borderBottom: "4px solid var(--gold-dim)",
+            background: "linear-gradient(to bottom, #0f172a 0%, #040812 100%)",
+            borderBottom: "4px solid var(--gold-primary)",
             borderRadius: "4px",
             position: "relative",
             zIndex: 1,
             marginTop: "-10px",
-            boxShadow: "0 20px 30px rgba(0,0,0,0.8), inset 0 2px 5px rgba(255,255,255,0.1)",
+            boxShadow: "0 20px 30px rgba(0,0,0,0.9), inset 0 2px 5px rgba(255,20,147,0.3)",
           }}
         />
       </div>
@@ -384,12 +340,12 @@ export default function Publications() {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
               style={{
-                backgroundColor: "rgba(5, 11, 26, 0.75)",
+                backgroundColor: "rgba(15, 23, 42, 0.85)",
                 backdropFilter: "blur(12px)",
-                border: "1.5px solid var(--gold-dim)",
-                borderRadius: "4px",
+                border: "1.5px solid var(--gold-primary)",
+                borderRadius: "8px",
                 padding: "40px",
-                boxShadow: "0 25px 50px rgba(0,0,0,0.7)",
+                boxShadow: "0 25px 50px rgba(0,0,0,0.8)",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
@@ -414,7 +370,7 @@ export default function Publications() {
                 style={{
                   fontSize: "clamp(24px, 4vw, 36px)",
                   color: "var(--gold-light)",
-                  textShadow: "0 0 15px rgba(240, 217, 160, 0.6)",
+                  textShadow: "0 0 20px rgba(255, 20, 147, 0.8)",
                   lineHeight: "1.4",
                 }}
               >
@@ -425,21 +381,22 @@ export default function Publications() {
               <div
                 className="english-heading"
                 style={{
-                  fontSize: "15px",
-                  color: "var(--gold-primary)",
+                  fontSize: "16px",
+                  color: "var(--copper-accent)",
                   fontStyle: "italic",
                   letterSpacing: "0.05em",
+                  fontWeight: "bold",
                 }}
               >
                 &ldquo;{books[openedBook].translation}&rdquo;
               </div>
 
               {/* Subtitles (Bilingual) */}
-              <div style={{ display: "flex", gap: "14px", alignItems: "baseline", borderTop: "1px solid rgba(200,169,110,0.2)", paddingTop: "14px", width: "100%", justifyContent: "center" }}>
+              <div style={{ display: "flex", gap: "14px", alignItems: "baseline", borderTop: "1px solid rgba(255,20,147,0.3)", paddingTop: "14px", width: "100%", justifyContent: "center" }}>
                 <span className="english-heading" style={{ fontSize: "18px", color: "var(--gold-light)", fontWeight: "bold" }}>
                   {books[openedBook].sub}
                 </span>
-                <span style={{ color: "var(--gold-dim)" }}>✦</span>
+                <span style={{ color: "var(--gold-primary)" }}>✦</span>
                 <span className="english-heading" style={{ fontSize: "14px", color: "var(--text-primary)", textTransform: "uppercase" }}>
                   {books[openedBook].sub}
                 </span>
@@ -450,7 +407,9 @@ export default function Publications() {
                 className={"english-body"}
                 style={{
                   color: "var(--text-muted)",
-                  fontSize: "14px"}}
+                  fontSize: "15px",
+                  lineHeight: "1.6",
+                }}
               >
                 {books[openedBook].desc}
               </p>
@@ -466,13 +425,13 @@ export default function Publications() {
               fontFamily: "var(--font-cormorant), serif",
               fontStyle: "italic",
               color: "var(--text-secondary)",
-              fontSize: "14px",
-              opacity: 0.7,
+              fontSize: "15px",
+              opacity: 0.8,
               letterSpacing: "0.1em",
               marginTop: "20px",
             }}
           >
-            ✦ Click on any active book on the shelf to swing its cover open and read its spiritual secrets ✦
+            ✦ Click on any treatise on the cyber-shelf to swing its cover open and immerse in its divine wisdom ✦
           </div>
         )}
       </div>

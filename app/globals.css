@@ -1,23 +1,23 @@
 :root {
-  /* Colors */
-  --gold-primary: #C8A96E;
-  --gold-light: #F0D9A0;
-  --gold-dim: #8B6E3A;
-  --deep-maroon: #2D0A0A;
-  --midnight-navy: #050B1A;
-  --parchment: #F5EDD8;
-  --parchment-dark: #E8D8B8;
-  --emerald-sufi: #0F4A30;
-  --copper-accent: #8B4513;
-  --text-primary: #F0D9A0;
-  --text-secondary: #A08860;
+  /* Colors - Sufi Cyber Psychology Palette (Pink, Cyan Blue, Emerald Green, Crisp White, Midnight) */
+  --gold-primary: #FF1493;     /* Sufi Ecstatic Pink */
+  --gold-light: #FF69B4;       /* Luminous Pink Glow */
+  --gold-dim: #C71585;         /* Deep Violet Pink Border */
+  --deep-maroon: #0A1120;      /* Deep Celestial Void */
+  --midnight-navy: #040812;    /* Midnight Space */
+  --parchment: #0F172A;        /* Dark Slate Blue Container */
+  --parchment-dark: #1E293B;   /* Slate Accent Container */
+  --emerald-sufi: #00C853;     /* Sufi Emerald Green */
+  --copper-accent: #00A8E8;    /* Electric Globe Blue / Cyan */
+  --text-primary: #FFFFFF;     /* Crisp White */
+  --text-secondary: #00A8E8;   /* Electric Cyan Touch */
 
   /* Theme Defaults (Dark) */
   --bg-color: var(--midnight-navy);
   --text-color: var(--text-primary);
-  --text-muted: var(--text-secondary);
+  --text-muted: #94A3B8;
   --border-color: var(--gold-dim);
-  --card-bg: rgba(5, 11, 26, 0.7);
+  --card-bg: rgba(15, 23, 42, 0.75);
 
   /* Typography Scale */
   --t1: clamp(64px, 8vw, 120px);
@@ -35,11 +35,11 @@
 
 /* Light Theme overrides */
 [data-theme="light"] {
-  --bg-color: var(--parchment);
-  --text-color: var(--deep-maroon);
-  --text-muted: #5c3f3f;
-  --border-color: var(--gold-dim);
-  --card-bg: rgba(232, 216, 184, 0.5);
+  --bg-color: #F8FAFC;
+  --text-color: #0F172A;
+  --text-muted: #475569;
+  --border-color: #FF1493;
+  --card-bg: rgba(255, 255, 255, 0.85);
 }
 
 * {
@@ -149,7 +149,7 @@ body::before {
   opacity: 1;
 }
 .portrait-container:hover .duotone-overlay {
-  background: linear-gradient(to bottom, rgba(45, 10, 10, 0.1), rgba(200, 169, 110, 0.25));
+  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.1), rgba(255, 20, 147, 0.25));
 }
 @media (max-width: 900px) {
   .about-split-grid {
@@ -262,7 +262,7 @@ body::before {
   border: 1px solid var(--gold-dim);
   border-radius: 4px;
   padding: 24px;
-  background-color: rgba(5, 11, 26, 0.4);
+  background-color: rgba(15, 23, 42, 0.4);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -299,4 +299,3 @@ body::before {
   transition: color 0.5s ease;
 }
 .masonry-item:hover .meta-text { color: var(--gold-light); }
-
