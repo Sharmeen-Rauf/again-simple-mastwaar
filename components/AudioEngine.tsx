@@ -85,6 +85,7 @@ export default function AudioEngine() {
       const sound = new Howl({
         src: ["https://assets.mixkit.co/active_storage/sfx/123/123-100.wav"], // Fallback asset
         html5: true,
+        preload: false,
         loop: true,
         volume: 0.05,
         onloaderror: () => {

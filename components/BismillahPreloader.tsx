@@ -21,8 +21,9 @@ export default function BismillahPreloader({ onComplete }: PreloaderProps) {
     // Lock scroll during preloader
     document.body.style.overflow = "hidden";
 
-    const paths = [path1Ref.current, path2Ref.current, path3Ref.current, path4Ref.current];
-    
+    const paths = [path1Ref.current, path2Ref.current, path3Ref.current, path4Ref.current].filter(Boolean) as SVGPathElement[];
+    if (paths.length === 0) return;
+
     // Setup initial stroke state
     paths.forEach((path) => {
       if (path) {
