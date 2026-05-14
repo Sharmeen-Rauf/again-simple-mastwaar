@@ -35,12 +35,75 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
 
   return (
     <>
+      {/* Top Bar with Socials and Upcoming Events CTA */}
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "36px",
+          zIndex: 10000,
+          backgroundColor: theme === "dark" ? "rgba(5, 11, 26, 0.95)" : "rgba(245, 237, 216, 0.95)",
+          borderBottom: theme === "dark" ? "1px solid rgba(255,255,255,0.1)" : "1px solid rgba(0,0,0,0.1)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "0 5%",
+          fontSize: "12px",
+          fontFamily: "var(--font-cormorant), serif",
+          color: "var(--gold-primary)",
+          backdropFilter: "blur(10px)",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+          <a href="tel:+12247166575" style={{ color: "inherit", textDecoration: "none", display: "flex", alignItems: "center", gap: "6px" }}>
+            <span style={{ color: "#E91E8C" }}>📞</span> +1 224-716-6575
+          </a>
+          <a href="mailto:mastwaar@gmail.com" style={{ color: "inherit", textDecoration: "none", display: "flex", alignItems: "center", gap: "6px" }}>
+            <span style={{ color: "#E91E8C" }}>✉</span> mastwaar@gmail.com
+          </a>
+        </div>
+
+        <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+            <a href="https://instagram.com/mastwaarqalandar" target="_blank" rel="noopener noreferrer" style={{ color: "inherit", textDecoration: "none" }}>
+              📸 Instagram
+            </a>
+            <a href="#" style={{ color: "inherit", textDecoration: "none" }}>
+              🌐 Facebook
+            </a>
+            <a href="#" style={{ color: "inherit", textDecoration: "none" }}>
+              ▶ YouTube
+            </a>
+          </div>
+
+          <a
+            href="/upcoming-events"
+            style={{
+              backgroundColor: "#E91E8C",
+              color: "#FFFFFF",
+              padding: "4px 14px",
+              borderRadius: "15px",
+              fontWeight: "bold",
+              textDecoration: "none",
+              textTransform: "uppercase",
+              fontSize: "10px",
+              letterSpacing: "0.1em",
+              boxShadow: "0 2px 10px rgba(233, 30, 140, 0.4)",
+            }}
+          >
+            📅 Upcoming Events
+          </a>
+        </div>
+      </div>
+
       {/* 0. Top Fixed Bismillah Bar */}
       <div
         className="bismillah-bar arabic-text"
         style={{
           position: "fixed",
-          top: "80px",
+          top: "121px",
           left: 0,
           width: "100%",
           zIndex: 9990,
@@ -60,10 +123,10 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
       <nav
         style={{
           position: "fixed",
-          top: 0,
+          top: "36px",
           left: 0,
           width: "100%",
-          height: "80px",
+          height: "85px",
           zIndex: 9999,
           display: "flex",
           alignItems: "center",
@@ -81,43 +144,27 @@ export default function Navbar({ theme, setTheme }: NavbarProps) {
           backdropFilter: isScrolled ? "blur(16px)" : "blur(8px)",
         }}
       >
-        {/* 1. Left: Tughra Calligraphy Emblem Logo */}
+        {/* 1. Left: Calligraphy Emblem Logo */}
         <a
-          href="#hero"
-          style={{ display: "flex", alignItems: "center", gap: "10px", color: "var(--gold-primary)", textDecoration: "none" }}
+          href="/"
+          style={{ display: "flex", alignItems: "center", color: "var(--gold-primary)", textDecoration: "none" }}
           data-cursor="crescent"
         >
           <div
             style={{
-              width: "44px",
-              height: "44px",
+              width: "70px",
+              height: "70px",
               borderRadius: "50%",
-              background: "linear-gradient(135deg, #E91E8C, #1565C0)",
+              boxShadow: "0 0 20px rgba(233, 30, 140, 0.4)",
+              overflow: "hidden",
+              border: "2px solid var(--gold-primary)",
+              backgroundColor: "#000",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              boxShadow: "0 0 15px rgba(233, 30, 140, 0.4)",
-              color: "#FFFFFF",
-              fontFamily: "var(--font-amiri), serif",
-              fontSize: "24px",
-              fontWeight: "bold",
             }}
           >
-            م
-          </div>
-          <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-            <span
-              className="english-heading"
-              style={{ fontSize: "16px", fontWeight: "bold", lineHeight: "1.2", letterSpacing: "0.05em", color: "#FFFFFF" }}
-            >
-              Muhabbat <span style={{ color: "#FF6EC7" }}>Mission</span>
-            </span>
-            <span
-              className="meta-text"
-              style={{ fontSize: "9px", color: "var(--gold-primary)", letterSpacing: "0.15em", fontWeight: "bold" }}
-            >
-              INTERNATIONAL
-            </span>
+            <img src="/logo-updated.jpeg" alt="Logo" style={{ width: "100%", height: "100%", objectFit: "contain" }} />
           </div>
         </a>
 
